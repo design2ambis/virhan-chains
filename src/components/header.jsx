@@ -1,14 +1,16 @@
 import { React, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Category from "./categoryfetch";
-// import Carttable from "./Carttable";
+import MobileCategory from "./mobilecategory";
 import Logo from "../../assets/Virhan-Chains.svg"
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 function Header() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   var username = localStorage.getItem("token");
 
   useEffect(() => {
-    if (username !== null) {
+    if (username && username !== null && username != "") {
       setIsLoggedIn(true);
     }
   }, []);
@@ -19,9 +21,21 @@ function Header() {
   //   window.location.href = "/";
   // };
 
+  const Openoffcanvus = () => {
+    document.querySelector("#MobileSidebar").classList.add("active");
+  }
+  const Closeoffcanvus = () => {
+    document.querySelector("#MobileSidebar").classList.remove("active");
+  }
+  const handleLogout = (() => {
+    localStorage.clear();
+    toast.success("Loggedout Successfully");
+    window.location.href = "/";
+  })
   return (
     <>
       {/*header section start*/}
+      <ToastContainer />
       <header className="ur_header_section primary-bg-color header-sticky">
         {/* <div className="topbar py-2 bottom-border d-none d-lg-block">
           <div className="container-large">
@@ -72,71 +86,59 @@ function Header() {
           <div className="container-large">
             <div className="row align-items-center">
               <div className="col-xl-2 col-6">
-                <a href="index.html" className="logo-white">
+                <Link to="/" className="logo-white">
                   <img
                     src={Logo}
                     alt="Virhan-Chains-logo"
-                    className="img-fluid mx-4"
-                    style={{width:"120px"}}
+                    className="img-fluid m-4"
+                    style={{ width: "120px" }}
                   />
-                </a>
+                </Link>
               </div>
               <div className="col-xxl-7 col-xl-8 d-none d-xl-block">
                 <nav className="ur-navmenu">
                   <ul>
-                    <li>
-                      <Link to="/">Home</Link>
-                    </li>
-                    <li>
-                      <a href="about.html">About</a>
-                    </li>
-                    <li className="has-submenu">
-                      <a href="#">Shop</a>
-                      <Category />                      
-                    </li><li>
-                      <a href="wishlist.html">Wishlist</a>
-                    </li>
-                    <li>
-                      <a href="contact.html">Contact</a>
-                    </li>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/about">About</Link></li>
+                    <li className="has-submenu"><a href="#!">Shop</a><Category /></li>
+                    <li><Link to="/wishlist">Wishlist</Link></li>
+                    <li><Link to="/contact">Contact</Link></li>
                   </ul>
                 </nav>
               </div>
               <div className="col-xxl-3 col-xl-2 col-6">
                 <div className="ur-header-right d-flex align-items-center justify-content-end">
                   <div className="ur-user-links position-relative">
-                    <button type="button" className="user-btn">
+                    <Link to="/myaccount" className="user-btn text-white">
                       <i className="fa-regular fa-user" />
-                    </button>
+                    </Link>
                     <ul className="position-absolute user-menu">
-                      <li>
-                        <a href="login.html">Login</a>
-                      </li>
-                      <li>
-                        <a href="signup.html">Sign Up</a>
-                      </li>
-                      <li>
-                        <a href="login.html">My Account</a>
-                      </li>
+                      { isLoggedIn ? (
+                        <>
+                          <li><Link to="/myaccount">My Account</Link></li>
+                          <li><a href="#!" onClick={handleLogout}>Logout</a></li>
+                        </>
+                      ) : (
+                        <>
+                          <li><Link to="/login">Login</Link></li>
+                          <li><Link to="/register">Sign Up</Link></li>
+                        </>
+                      )}
                     </ul>
                   </div>
                   <div className="user-cart d-none d-sm-block">
-                    <button
-                      type="button"
+                    <Link
+                      to="/cart"
                       className="cart-btn"
-                      data-bs-toggle="dropdown"
+
                     >
                       <span className="me-2">
                         <i className="fa-solid fa-basket-shopping" />
                       </span>
-                      <span className="btn-text">Cart ($0.00)</span>
-                    </button>
+                      <span className="btn-text">Cart</span>
+                    </Link>
                   </div>
-                  <div className="d-sm-none">
-                    <a href="cart.html" className="header-link">
-                      <i className="fa-solid fa-basket-shopping" />
-                    </a>
-                  </div>
+
                   <div className="header-search d-none d-sm-block">
                     <div className="dropdown">
                       <button className="search-btn" data-bs-toggle="dropdown">
@@ -168,6 +170,7 @@ function Header() {
                     <button
                       type="button"
                       className="ur3-header-toggle offcanvus-toggle d-none d-xl-inline-block"
+
                     >
                       <span />
                       <span />
@@ -176,6 +179,7 @@ function Header() {
                     <button
                       type="button"
                       className="ur3-header-toggle mobile-menu-toggle d-xl-none"
+                      onClick={Openoffcanvus}
                     >
                       <span />
                       <span />
@@ -195,9 +199,7 @@ function Header() {
           <i className="fa-solid fa-xmark" />
         </a>
         <div className="content-top mb-100">
-          <a href="index.html" className="offcanvus-logo">
-            <img src="assets/images/logo-black.png" alt="logo" />
-          </a>
+
           <p className="mb-0 mt-32 fw-light">
             Distrak Street 2SK Line, Germanygalore@inside-support.com (+125)
             2156-2145
@@ -284,90 +286,16 @@ function Header() {
       </div>
       {/*offcanvus end*/}
       {/*mobile menu start*/}
-      <div className="mobile-menu">
-        <a href="#" className="close">
+      <div className="mobile-menu" id="MobileSidebar">
+        <a href="#" className="close" onClick={Closeoffcanvus}>
           <i className="fas fa-xmark" />
         </a>
-        <a href="#" className="logo">
-          <img
-            src="assets/images/logo-black.jpg"
-            alt="logo"
-            className="img-fluid"
-          />
-        </a>
         <ul className="mobile-nav-menu">
-          <li className="has-submenu">
-            <a href="#">Home</a>
-            <i className="fas fa-angle-down" />
-            <ul className="submenu-wrapper">
-              <li>
-                <a href="index.html">Home Page 1</a>
-              </li>
-              <li>
-                <a href="index-2.html">Home Page 2</a>
-              </li>
-              <li>
-                <a href="index-3.html">Home Page 3</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="about.html">About</a>
-          </li>
-          <li className="has-submenu">
-            <a href="#">Pages</a>
-            <i className="fas fa-angle-down" />
-            <ul className="submenu-wrapper">
-              <li>
-                <a href="cart.html">Cart</a>
-              </li>
-              <li>
-                <a href="checkout.html">Checkout</a>
-              </li>
-              <li>
-                <a href="faq.html">Faq</a>
-              </li>
-              <li>
-                <a href="wishlist.html">Wishlist</a>
-              </li>
-              <li>
-                <a href="order-tracking.html">Order Tracking</a>
-              </li>
-            </ul>
-          </li>
-          <li className="has-submenu">
-            <a href="#">Blog</a>
-            <i className="fas fa-angle-down" />
-            <ul className="submenu-wrapper">
-              <li>
-                <a href="blog.html">Blog List</a>
-              </li>
-              <li>
-                <a href="blog-single.html">Blog Details</a>
-              </li>
-            </ul>
-          </li>
-          <li className="has-submenu">
-            <a href="#">Shop</a>
-            <i className="fas fa-angle-down" />
-            <ul className="submenu-wrapper">
-              <li>
-                <a href="shop.html">Shop Grid</a>
-              </li>
-              <li>
-                <a href="shop-list.html">Shop List</a>
-              </li>
-              <li>
-                <a href="product-details.html">Product Details</a>
-              </li>
-              <li>
-                <a href="product-details-2.html">Product Details V2</a>
-              </li>
-              <li>
-                <a href="product-details-3.html">Product Details V3</a>
-              </li>
-            </ul>
-          </li>
+          <li className="has-submenu"><a href="#">Home</a></li>
+          <li><a href="about.html">About</a></li>
+
+          <MobileCategory />
+
           <li>
             <a href="wishlist.html">Wishlist</a>
           </li>

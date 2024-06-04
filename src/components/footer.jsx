@@ -4,20 +4,13 @@ function Footer() {
   return (
     <>
       {/*footer section start*/}
-      <footer className="footer-style-3 primary-bg-color pt-120 pb-3 pb-xl-0">
+      <footer className="footer-style-3 primary-bg-color-dark pt-120 pb-3 pb-xl-0">
         <div className="container-large">
           <div className="row">
-            <div className="col-xl-8">
+            <div className="col-12">
               <div className="row g-4">
                 <div className="col-xxl-4 col-xl-5 col-lg-3 col-md-6">
                   <div className="ur3-footer-widget">
-                    <a href="index.html" className="footer-logo">
-                      <img
-                        src="assets/images/logo.png"
-                        alt="logo"
-                        className="img-fluid"
-                      />
-                    </a>
                     <span className="text-white fw-medium fs-sm d-block mt-40">
                       Quick Contact
                     </span>
@@ -147,7 +140,7 @@ function Footer() {
                 <div className="row align-items-center g-3">
                   <div className="col-md-6">
                     <p className="mb-0 text-white">
-                      © 2022 Uroan. All Rights Reserved
+                      © 2022 Virhan Chains Powered by <a href="http://nivsjewels.com" target="_blank">Nivsjewels</a>. All Rights Reserved
                     </p>
                   </div>
                   <div className="col-md-6">
@@ -162,127 +155,7 @@ function Footer() {
                 </div>
               </div>
             </div>
-            <div className="col-xl-4">
-              <ul className="footer-instagram-gallery ps-xl-5">
-                <li>
-                  <img
-                    src="assets/images/gallery/insta-1.jpg"
-                    alt="gallery image"
-                    className="img-fluid"
-                  />
-                  <a
-                    href="assets/images/gallery/insta-1.jpg"
-                    data-fancybox="gallery2"
-                  >
-                    <i className="fab fa-instagram" />
-                  </a>
-                </li>
-                <li>
-                  <img
-                    src="assets/images/gallery/insta-2.jpg"
-                    alt="gallery image"
-                    className="img-fluid"
-                  />
-                  <a
-                    href="assets/images/gallery/insta-2.jpg"
-                    data-fancybox="gallery2"
-                  >
-                    <i className="fab fa-instagram" />
-                  </a>
-                </li>
-                <li>
-                  <img
-                    src="assets/images/gallery/insta-3.jpg"
-                    alt="gallery image"
-                    className="img-fluid"
-                  />
-                  <a
-                    href="assets/images/gallery/insta-3.jpg"
-                    data-fancybox="gallery2"
-                  >
-                    <i className="fab fa-instagram" />
-                  </a>
-                </li>
-                <li>
-                  <img
-                    src="assets/images/gallery/insta-4.jpg"
-                    alt="gallery image"
-                    className="img-fluid"
-                  />
-                  <a
-                    href="assets/images/gallery/insta-4.jpg"
-                    data-fancybox="gallery2"
-                  >
-                    <i className="fab fa-instagram" />
-                  </a>
-                </li>
-                <li>
-                  <img
-                    src="assets/images/gallery/insta-5.jpg"
-                    alt="gallery image"
-                    className="img-fluid"
-                  />
-                  <a
-                    href="assets/images/gallery/insta-5.jpg"
-                    data-fancybox="gallery2"
-                  >
-                    <i className="fab fa-instagram" />
-                  </a>
-                </li>
-                <li>
-                  <img
-                    src="assets/images/gallery/insta-6.jpg"
-                    alt="gallery image"
-                    className="img-fluid"
-                  />
-                  <a
-                    href="assets/images/gallery/insta-6.jpg"
-                    data-fancybox="gallery2"
-                  >
-                    <i className="fab fa-instagram" />
-                  </a>
-                </li>
-                <li>
-                  <img
-                    src="assets/images/gallery/insta-7.jpg"
-                    alt="gallery image"
-                    className="img-fluid"
-                  />
-                  <a
-                    href="assets/images/gallery/insta-7.jpg"
-                    data-fancybox="gallery2"
-                  >
-                    <i className="fab fa-instagram" />
-                  </a>
-                </li>
-                <li>
-                  <img
-                    src="assets/images/gallery/insta-8.jpg"
-                    alt="gallery image"
-                    className="img-fluid"
-                  />
-                  <a
-                    href="assets/images/gallery/insta-8.jpg"
-                    data-fancybox="gallery2"
-                  >
-                    <i className="fab fa-instagram" />
-                  </a>
-                </li>
-                <li>
-                  <img
-                    src="assets/images/gallery/insta-9.jpg"
-                    alt="gallery image"
-                    className="img-fluid"
-                  />
-                  <a
-                    href="assets/images/gallery/insta-9.jpg"
-                    data-fancybox="gallery2"
-                  >
-                    <i className="fab fa-instagram" />
-                  </a>
-                </li>
-              </ul>
-            </div>
+
           </div>
         </div>
       </footer>

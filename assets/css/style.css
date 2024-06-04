@@ -1,19 +1,15 @@
-/*
-Theme Name: Uroan - eCommerce HTML Template
-Author: WebritoTheme
-Author URI: https://themeforest.net/user/webritotheme
-Tags: uroan, ecommerce, blog, fashion products, online shop, ecommerce store
-Description: Uroan - An eCommerce HTML5 Template
-Version: 1.1.0
-*/
+
 /************************************** base css **************************************/
 @import url("https://fonts.googleapis.com/css2?family=Italiana&amp;family=Prompt:wght@300;400;500;600;700;800;900&amp;display=swap");
+@import "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap";
+@import "https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&amp;display=swap";
 
 :root {
   --body-font: 'Prompt', sans-serif;
   --heading-font: 'Italiana', serif;
-  --primary-color: #121111;
-  --secondary-color: #f36a07;
+  --primary-color: #3D3D3D;
+  --primary-color-red:#8f0807;
+  --secondary-color: #f36a07;  
   --text-color: #74787C;
   --border-color: #3D3D3D;
   --border-gray: #DEDEDE;
@@ -228,7 +224,7 @@ h3 {
 }
 
 .primary-bg-color {
-  background-color: var(--primary-color);
+  background-color: var(--primary-color-red);
 }
 
 .secondary-bg-color {
@@ -1868,7 +1864,7 @@ h3 {
 }
 
 .ur-product-card .feature-image {
-  padding: 45px 36px;
+  /* padding: 45px 36px; */
   overflow: hidden;
 }
 
@@ -6905,4 +6901,35 @@ h3 {
   .store-search-box {
     padding: 32px 24px;
   }
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #FFF;
+  border-bottom-color: #FF3D00;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.primary-bg-color-red{
+  background-color: #8f0807;
+}
+.primary-bg-color-dark{
+    background-color:#272727
+}
+#root{
+  overflow-x: clip;
 }

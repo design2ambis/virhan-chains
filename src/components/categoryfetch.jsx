@@ -47,10 +47,10 @@ const Category = () => {
           {categories.map((category, index) => (
             <div className="megamenu-column border-r" key={index}>
               <h6 className="column-title text-danger" style={{color: '#f36a07'}}>{category.name}</h6>
-              <ul className="pages-list">
+              <ul className="pages-list" >
                 {category.subcat.map((sub) => (
                   <li key={sub.sid}>
-                    <Link to={`shop/${category.cname}/${sub.sname}/1`}>{sub.name}</Link>
+                    <Link to={`shop/${category.cname}/${sub.sname}/1/0/0/0`}>{sub.name}</Link>
                   </li>
                 ))}
               </ul>
