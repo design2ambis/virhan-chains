@@ -309,12 +309,12 @@ function Header() {
       {/*offcanvus end*/}
       {/*mobile menu start*/}
       <div className="mobile-menu" id="MobileSidebar">
-        <a href="#" className="close" onClick={Closeoffcanvus}>
+        <button type="button" className="close" onClick={Closeoffcanvus}>
           <i className="fas fa-xmark" />
-        </a>
+        </button>
         <ul className="mobile-nav-menu">
           <li className="has-submenu">
-            <a href="#">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li>
             <Link to="/about">About</Link>

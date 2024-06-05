@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const Product = () => {
   const { prono } = useParams();
   const [product, setproduct] = useState([]);
   const [ran, setrandomData] = useState([]);
-  const username = localStorage.getItem("token");
+  const [qty, setQty] = useState(1);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -47,7 +50,50 @@ const Product = () => {
 
     fetchData();
   }, [prono]);
-  console.log(ran);
+  // console.log(ran);
+
+  const adjustQty = (action) => {
+    if (action === "add") {
+      setQty(qty + 1);
+    } else if (action === "sub" && qty > 1) {
+      setQty(qty - 1);
+    }
+  };
+
+  const addCart = async (id, image, jewelcat, no, size, weight, qty) => {
+    var token = localStorage.getItem("token");
+
+    if (token && token != null && token != "") {
+      const cartdata = {
+        pid: id,
+        proimg: image,
+        prono: no,
+        qty: qty,
+        prowgt: weight,
+        token: token,
+        add_cart: "",
+      };
+      try {
+        const cartraw = await fetch(`https://nivsjewels.com/api/update`, {
+          method: "POST",
+          body: JSON.stringify(cartdata),
+        });
+
+        const cartjson = await cartraw.json();
+
+        if (cartjson.status == true) {
+          toast.success(`${cartjson.message} Successfully!`);
+        } else {
+          toast.error("Something Went Wrong");
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    } else {
+      toast.error("Login for Add to cart");
+    }
+  };
+
 
   return (
     <>
@@ -72,7 +118,7 @@ const Product = () => {
               <div className="col-xxl-6">
                 <div className="product-single-slider d-flex">
                   <div className="product-nav-slider-wrapper">
-                    <div className="product-nav-slider">
+                    {/* <div className="product-nav-slider">
                       <div className="feature-image light-bg p-3">
                         <img
                           src={product.design_image}
@@ -80,7 +126,7 @@ const Product = () => {
                           className="img-fluid"
                         />
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                   <div className="product-main-slider-wrapper">
                     <div className="single-product-slider slider-spacing">
@@ -389,15 +435,37 @@ const Product = () => {
                   </ul>
                   <div className="d-flex align-items-center mt-40 gap-3 flex-wrap">
                     <div className="quantity-box">
-                      <button type="button" className="drecrement">
+                      <button
+                        type="button"
+                        className="drecrement"
+                        onClick={() => adjustQty("sub")}
+                      >
                         <i className="fa-solid fa-minus" />
                       </button>
-                      <input type="text" defaultValue={1} />
-                      <button type="button" className="drecrement">
+                      <input type="text" value={qty} readOnly />
+                      <button
+                        type="button"
+                        className="drecrement"
+                        onClick={() => adjustQty("add")}
+                      >
                         <i className="fa-solid fa-plus" />
                       </button>
                     </div>
-                    <button type="button" className="add_to_cart_btn">
+                    <button
+                      type="button"
+                      className="add_to_cart_btn"
+                      onClick={() =>
+                        addCart(
+                          product.design_id,
+                          product.design_image,
+                          product.jewelcat,
+                          product.design_no,
+                          product.size,
+                          product.design_weight,
+                          qty
+                        )
+                      }
+                    >
                       Add to Cart
                       <span className="ms-2">
                         <i className="fa-solid fa-basket-shopping" />
@@ -834,10 +902,10 @@ const Product = () => {
                   </Link>
                   <div className="product-overlay position-absolute">
                     <div className="product-btns d-flex align-items-center justify-content-between">
-                      <a href="javascript:void(0)">
+                      <a href="#!">
                         <i className="fa-regular fa-heart" />
                       </a>
-                      <a href="javascript:void(0)">
+                      <a href="#!">
                         <i className="fa-solid fa-basket-shopping" />
                       </a>
                       <a href="#product_quickview" data-bs-toggle="modal">
