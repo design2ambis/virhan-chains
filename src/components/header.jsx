@@ -275,12 +275,12 @@ function Header() {
             </select>
           </div>
           <div className="user-links">
-            <a href="login.html">
+            <Link to="/login">
               <span className="me-2">
                 <i className="fa-regular fa-user" />
               </span>
               Account
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -292,15 +292,15 @@ function Header() {
         </a>
         <ul className="mobile-nav-menu">
           <li className="has-submenu"><a href="#">Home</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><Link to="/about">About</Link></li>
 
           <MobileCategory />
 
           <li>
-            <a href="wishlist.html">Wishlist</a>
+            <Link to="/wishlist">Wishlist</Link>
           </li>
           <li>
-            <a href="contact.html">Contact</a>
+            <Link to="/contact">Contact</Link>
           </li>
         </ul>
         <form
@@ -331,134 +331,21 @@ function Header() {
       <div className="cart-drawer position-fixed">
         <div className="drawer-close d-flex align-items-center justify-content-between position-absolute start-0 top-0 w-100 px-4 py-4 border-bottom">
           <h6 className="mb-0">Shopping Cart</h6>
-          <a href="#" className="drawer-close">
+          <a href="!#" className="drawer-close">
             <i className="fas fa-xmark" />
           </a>
-        </div>
-        <ul className="cart-list">
-          <li className="d-flex align-items-center gap-3">
-            <div className="feature-image light-bg">
-              <a href="product-details.html">
-                <img
-                  src="assets/images/products/product-1.png"
-                  alt="feature image"
-                  className="img-fluid"
-                />
-              </a>
-            </div>
-            <div className="d-flex justify-content-between gap-3 w-100">
-              <div>
-                <a href="product-details.html">
-                  <h6 className="mb-1">Weeding Rings</h6>
-                </a>
-                <span className="price fw-medium secondary-text-color d-block mb-1 fs-sm">
-                  $250.00
-                </span>
-                <div className="quantity d-flex align-items-center">
-                  <input type="text" defaultValue={1} />
-                  <div className="step-btns">
-                    <button className="increment">
-                      <i className="fa-solid fa-angle-up" />
-                    </button>
-                    <button className="decrement">
-                      <i className="fa-solid fa-angle-down" />
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <a href="#" className="close">
-                  <i className="fas fa-xmark" />
-                </a>
-              </div>
-            </div>
-          </li>
-          <li className="d-flex align-items-center gap-4">
-            <div className="feature-image light-bg">
-              <a href="product-details.html">
-                <img
-                  src="assets/images/products/product-2.png"
-                  alt="feature image"
-                  className="img-fluid"
-                />
-              </a>
-            </div>
-            <div className="d-flex justify-content-between gap-3 w-100">
-              <div>
-                <a href="product-details.html">
-                  <h6 className="mb-1">Diamond Rings</h6>
-                </a>
-                <span className="price fw-medium secondary-text-color d-block mb-1 fs-sm">
-                  $250.00
-                </span>
-                <div className="quantity d-flex align-items-center">
-                  <input type="text" defaultValue={1} />
-                  <div className="step-btns">
-                    <button className="increment">
-                      <i className="fa-solid fa-angle-up" />
-                    </button>
-                    <button className="decrement">
-                      <i className="fa-solid fa-angle-down" />
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <a href="#" className="close">
-                  <i className="fas fa-xmark" />
-                </a>
-              </div>
-            </div>
-          </li>
-          <li className="d-flex align-items-center gap-4">
-            <div className="feature-image light-bg">
-              <a href="product-details.html">
-                <img
-                  src="assets/images/products/product-3.png"
-                  alt="feature image"
-                  className="img-fluid"
-                />
-              </a>
-            </div>
-            <div className="d-flex justify-content-between gap-3 w-100">
-              <div>
-                <a href="product-details.html">
-                  <h6 className="mb-1">Bracelets Gold</h6>
-                </a>
-                <span className="price fw-medium secondary-text-color d-block mb-1 fs-sm">
-                  $250.00
-                </span>
-                <div className="quantity d-flex align-items-center">
-                  <input type="text" defaultValue={1} />
-                  <div className="step-btns">
-                    <button className="increment">
-                      <i className="fa-solid fa-angle-up" />
-                    </button>
-                    <button className="decrement">
-                      <i className="fa-solid fa-angle-down" />
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <a href="#" className="close">
-                  <i className="fas fa-xmark" />
-                </a>
-              </div>
-            </div>
-          </li>
-        </ul>
+        </div>        
         <div className="drawer-bottom border-top">
           <div className="d-flex align-items-center justify-content-between mt-4">
             <h6 className="mb-0">Total:</h6>
             <span className="fw-medium secondary-text-color">$750.00</span>
           </div>
-          <a
-            href="cart.html"
+          <Link
+            to="/cart"
             className="template-btn primary-btn text-uppercase fw-medium w-100 text-center mt-4"
           >
             <span>View Cart &amp; Check Out</span>
-          </a>
+          </Link>
         </div>
       </div>
       {/*cart drawer end*/}

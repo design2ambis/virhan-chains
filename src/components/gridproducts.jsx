@@ -27,7 +27,7 @@ const Gridproducts = (props) => {
         const fetchData = async () => {
             try {
                 const proRes = await fetch(
-                    `https://utsarvajewels.com/api/crud?get_product_details_overall&cat=${props.cat}&&subcat=${props.subcat}&&page=${props.page}&&wgt=${props.weight}&&type=${props.type}&&collection=${props.collection}`
+                    `https://utsarvajewels.com/api/crud?get_product_details_overall&cat=${props.cat}&&subcat=${props.subcat}&&page=${props.page}&&wgt=${props.weight}&&type=${props.type}&&collection=${props.collection}&&manu=${props.manu}`
                 );
                 const proData = await proRes.json();
 
@@ -140,9 +140,9 @@ const Gridproducts = (props) => {
 
                                                                 {
                                                                     0 == props.weight ? (
-                                                                        <Link style={{ background: "#f0f0f0" }} to={`/shop/${props.cat}/${props.subcat}/${currentpage}/0/${props.type}/${props.collection}`}  >0-100 </Link>
+                                                                        <Link style={{ background: "#f0f0f0" }} to={`/shop/${props.cat}/${props.subcat}/${currentpage}/0/${props.type}/${props.collection}/${props.manu}`}  >0-100 </Link>
                                                                     ) : (
-                                                                        <Link to={`/shop/${props.cat}/${props.subcat}/${currentpage}/0/${props.type}/${props.collection}`}  >0-100 </Link>
+                                                                        <Link to={`/shop/${props.cat}/${props.subcat}/${currentpage}/0/${props.type}/${props.collection}/${props.manu}`}  >0-100 </Link>
                                                                     )
                                                                 }
 
@@ -157,9 +157,9 @@ const Gridproducts = (props) => {
                                                                     <label><span>
                                                                         {
                                                                             wgt.weight_id == props.weight ? (
-                                                                                <Link style={{ background: "#f0f0f0" }} to={`/shop/${props.cat}/${props.subcat}/1/${wgt.weight_id}/${props.type}/${props.collection}`}>{wgt.weight_code} <span>{wgt.count}</span></Link>
+                                                                                <Link style={{ background: "#f0f0f0" }} to={`/shop/${props.cat}/${props.subcat}/1/${wgt.weight_id}/${props.type}/${props.collection}/${props.manu}`}>{wgt.weight_code} <span>{wgt.count}</span></Link>
                                                                             ) : (
-                                                                                <Link to={`/shop/${props.cat}/${props.subcat}/1/${wgt.weight_id}/${props.type}/${props.collection}`}>{wgt.weight_code} <span>{wgt.count}</span></Link>
+                                                                                <Link to={`/shop/${props.cat}/${props.subcat}/1/${wgt.weight_id}/${props.type}/${props.collection}/${props.manu}`}>{wgt.weight_code} <span>{wgt.count}</span></Link>
                                                                             )
                                                                         }
                                                                     </span></label>
@@ -180,9 +180,9 @@ const Gridproducts = (props) => {
 
                                                                 {
                                                                     0 == props.type ? (
-                                                                        <Link style={{ background: "#f0f0f0" }} to={`/shop/${props.cat}/${props.subcat}/${currentpage}/${props.weight}/0/${props.collection}`}>All Design </Link>
+                                                                        <Link style={{ background: "#f0f0f0" }} to={`/shop/${props.cat}/${props.subcat}/${currentpage}/${props.weight}/0/${props.collection}/${props.manu}`}>All Design </Link>
                                                                     ) : (
-                                                                        <Link to={`/shop/${props.cat}/${props.subcat}/${currentpage}/${props.weight}/0/${props.collection}`}>All Design </Link>
+                                                                        <Link to={`/shop/${props.cat}/${props.subcat}/${currentpage}/${props.weight}/0/${props.collection}/${props.manu}`}>All Design </Link>
                                                                     )
                                                                 }
 
@@ -194,9 +194,9 @@ const Gridproducts = (props) => {
 
                                                                 {
                                                                     1 == props.type ? (
-                                                                        <Link style={{ background: "#f0f0f0" }} to={`/shop/${props.cat}/${props.subcat}/${currentpage}/${props.weight}/1/${props.collection}`}>Plain </Link>
+                                                                        <Link style={{ background: "#f0f0f0" }} to={`/shop/${props.cat}/${props.subcat}/${currentpage}/${props.weight}/1/${props.collection}/${props.manu}`}>Plain </Link>
                                                                     ) : (
-                                                                        <Link to={`/shop/${props.cat}/${props.subcat}/${currentpage}/${props.weight}/1/${props.collection}`}>Plain</Link>
+                                                                        <Link to={`/shop/${props.cat}/${props.subcat}/${currentpage}/${props.weight}/1/${props.collection}/${props.manu}`}>Plain</Link>
                                                                     )
                                                                 }
 
@@ -208,9 +208,9 @@ const Gridproducts = (props) => {
 
                                                                 {
                                                                     2 == props.type ? (
-                                                                        <Link style={{ background: "#f0f0f0" }} to={`/shop/${props.cat}/${props.subcat}/${currentpage}/${props.weight}/2/${props.collection}`}>Stone </Link>
+                                                                        <Link style={{ background: "#f0f0f0" }} to={`/shop/${props.cat}/${props.subcat}/${currentpage}/${props.weight}/2/${props.collection}/${props.manu}`}>Stone </Link>
                                                                     ) : (
-                                                                        <Link to={`/shop/${props.cat}/${props.subcat}/${currentpage}/${props.weight}/2/${props.collection}`}>Stone </Link>
+                                                                        <Link to={`/shop/${props.cat}/${props.subcat}/${currentpage}/${props.weight}/2/${props.collection}/${props.manu}`}>Stone </Link>
                                                                     )
                                                                 }
 
@@ -232,9 +232,9 @@ const Gridproducts = (props) => {
 
                                                                 {
                                                                     0 == props.type ? (
-                                                                        <Link style={{ background: "#f0f0f0" }} to={`/shop/${props.cat}/${props.subcat}/${currentpage}/${props.weight}/0/${props.collection}`}>All Design </Link>
+                                                                        <Link style={{ background: "#f0f0f0" }} to={`/shop/${props.cat}/${props.subcat}/${currentpage}/${props.weight}/0/${props.collection}/0`}>All Design </Link>
                                                                     ) : (
-                                                                        <Link to={`/shop/${props.cat}/${props.subcat}/${currentpage}/${props.weight}/0/${props.collection}`}>All Design </Link>
+                                                                        <Link to={`/shop/${props.cat}/${props.subcat}/${currentpage}/${props.weight}/0/${props.collection}/0`}>All Design </Link>
                                                                     )
                                                                 }
 
@@ -248,10 +248,10 @@ const Gridproducts = (props) => {
                                                                 <li key={index}>
                                                                     <label><span>
                                                                         {
-                                                                            man.mid == props.weight ? (
-                                                                                <Link style={{ background: "#f0f0f0" }} to={`/shop/${props.cat}/${props.subcat}/1/${props.weight}/${props.type}/${props.collection}`}>{man.mname} <span>{man.count}</span></Link>
+                                                                            man.mid == props.manu ? (
+                                                                                <Link style={{ background: "#f0f0f0" }} to={`/shop/${props.cat}/${props.subcat}/1/${props.weight}/${props.type}/${props.collection}/${man.mid}`}>{man.mname} <span>{man.count}</span></Link>
                                                                             ) : (
-                                                                                <Link to={`/shop/${props.cat}/${props.subcat}/1/${props.weight}/${props.type}/${props.collection}`}>{man.mname} <span>{man.count}</span></Link>
+                                                                                <Link to={`/shop/${props.cat}/${props.subcat}/1/${props.weight}/${props.type}/${props.collection}/${man.mid}`}>{man.mname} <span>{man.count}</span></Link>
 
                                                                             )
                                                                         }
@@ -322,21 +322,21 @@ const Gridproducts = (props) => {
                                                     <>
                                                         <div className="text-center mt-60">
                                                             <ul className="template-pagination d-inline-flex align-items-center gap-3">
-                                                                <li><Link to={`/shop/${props.cat}/${props.subcat}/${minuspage}/${props.weight}/${props.type}/${props.collection}`}><i className="fa-solid fa-angles-left" /></Link></li>
+                                                                <li><Link to={`/shop/${props.cat}/${props.subcat}/${minuspage}/${props.weight}/${props.type}/${props.collection}/${props.manu}`}><i className="fa-solid fa-angles-left" /></Link></li>
                                                                 {pages.map((page, index) => (
                                                                     <li key={index}>
 
                                                                         {
                                                                             page.i == props.page ? (
-                                                                                <Link className="active" to={`/shop/${props.cat}/${props.subcat}/${page.i}/${props.weight}/${props.type}/${props.collection}`}>{page.i}</Link>
+                                                                                <Link className="active" to={`/shop/${props.cat}/${props.subcat}/${page.i}/${props.weight}/${props.type}/${props.collection}/${props.manu}`}>{page.i}</Link>
                                                                             ) : (
-                                                                                <Link className="" to={`/shop/${props.cat}/${props.subcat}/${page.i}/${props.weight}/${props.type}/${props.collection}`}>{page.i}</Link>
+                                                                                <Link className="" to={`/shop/${props.cat}/${props.subcat}/${page.i}/${props.weight}/${props.type}/${props.collection}/${props.manu}`}>{page.i}</Link>
                                                                             )
                                                                         }
 
                                                                     </li>
                                                                 ))}
-                                                                <li><Link to={`/shop/${props.cat}/${props.subcat}/${addpage}/${props.weight}/${props.type}/${props.collection}`}><i className="fa-solid fa-angles-right" /></Link></li>
+                                                                <li><Link to={`/shop/${props.cat}/${props.subcat}/${addpage}/${props.weight}/${props.type}/${props.collection}/${props.manu}`}><i className="fa-solid fa-angles-right" /></Link></li>
                                                             </ul>
                                                         </div>
                                                     </>

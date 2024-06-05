@@ -58,7 +58,7 @@ const Checkout = () => {
                 setIsCount(true);
                 // console.log(cartData.data);
             } else {
-                setIsCount(false);
+                window.location.href = "/cart";
             }
             setLoad(false);
         } catch (error) {

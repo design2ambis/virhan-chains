@@ -50,7 +50,7 @@ const Category = () => {
               <ul className="pages-list" >
                 {category.subcat.map((sub) => (
                   <li key={sub.sid}>
-                    <Link to={`shop/${category.cname}/${sub.sname}/1/0/0/0`}>{sub.name}</Link>
+                    <Link to={`shop/${category.cname}/${sub.sname}/1/0/0/0/0`}>{sub.name}</Link>
                   </li>
                 ))}
               </ul>

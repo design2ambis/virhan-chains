@@ -790,13 +790,13 @@ const Product = () => {
                             <div className="ur-product-card col-md-2 col-sm-12" key={index}>
                                 {/* <span className="position-absolute ur-badge coupon-badge">-50%</span> */}
                                 <div className="feature-image d-flex align-items-cneter justify-content-center light-bg position-relative">
-                                    <a href="product-details.html">
+                                    <Link to={`/product/${r.design_no}`}>
                                         <img
                                             src={r.design_image}
                                             alt={r.design_no}
                                             className="img-fluid"
                                         />
-                                    </a>
+                                    </Link>
                                     <div className="product-overlay position-absolute">
                                         <div className="product-btns d-flex align-items-center justify-content-between">
                                             <a href="javascript:void(0)">

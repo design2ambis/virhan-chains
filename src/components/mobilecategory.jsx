@@ -53,7 +53,7 @@ const MobileCategory = () => {
                     <ul className="submenu-wrapper" id={`subcatList_${category.id}`} key={category.id}>
                         {category.subcat.map((sub) => (
                             <li key={sub.id}>
-                                <Link className="text-dark" to={`shop/${category.cname}/${sub.sname}/1/0/0/0`}>{sub.name}</Link>
+                                <Link className="text-dark" to={`shop/${category.cname}/${sub.sname}/1/0/0/0/0`}>{sub.name}</Link>
                             </li>
                         ))}
                     </ul>

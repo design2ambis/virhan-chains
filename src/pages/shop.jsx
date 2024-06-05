@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import Gridproducts from '../components/gridproducts';
 
 const Shop = () => {
-    const { cat, subcat, page, wgt, type, collection } = useParams();
+    const { cat, subcat, page, wgt, type, collection, manu } = useParams();
     return (
         <>
             {/*breadcrumb section start*/}
@@ -19,7 +19,7 @@ const Shop = () => {
                 </div>
             </div>
             {/*breadcrumb section end*/}
-            <Gridproducts cat={cat} subcat={subcat} page={page} weight={wgt} type={type} collection={collection}  />
+            <Gridproducts cat={cat} subcat={subcat} page={page} weight={wgt} type={type} collection={collection} manu={manu} />
         </>
 
     )
