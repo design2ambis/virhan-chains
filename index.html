@@ -1,38 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virhan Chains </title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Virhan Chains</title>
 
     <!--Essential css files-->
-    <link rel="stylesheet" href="assets/css/all.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/slick.css">
-    <link rel="stylesheet" href="assets/css/jquery-ui.css">
-    <link rel="stylesheet" href="assets/css/nice-select.css">
-    <link rel="stylesheet" href="assets/css/fancybox.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- <link rel="stylesheet" href="assets/css/all.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/slick.css" />
+    <link rel="stylesheet" href="assets/css/jquery-ui.css" />
+    <link rel="stylesheet" href="assets/css/nice-select.css" />
+    <link rel="stylesheet" href="assets/css/fancybox.css" />
+    <link rel="stylesheet" href="assets/css/animate.css" />
+    <link rel="stylesheet" href="assets/css/style.css" /> -->
 
     <style>
-        .sidebar-widget .color-select li label>span {
-            padding-left: 0px;
-        }
-        body{
-            font-family: Inter, sans-serif;
-        }
+      .sidebar-widget .color-select li label > span {
+        padding-left: 0px;
+      }
+      body {
+        font-family: Inter, sans-serif;
+      }
     </style>
 
     <!--favicon-->
-    <link rel="icon" href="assets/favicon.svg">
+    <link rel="icon" href="assets/favicon.svg" />
+  </head>
 
-</head>
-
-<body>
-    <div id="root"></div><!--Esential Js Files-->
+  <body>
+    <div id="root"></div>
+    <!--Esential Js Files-->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
@@ -43,22 +42,6 @@
     <script src="assets/js/countdown.min.js"></script>
     <script src="assets/js/wow.js"></script>
     <script src="assets/js/script.js"></script>
-    <script type="module" src="src/main.jsx"></script>
-    <script type="text/javascript">
-        (function (l) {
-            if (l.search[1] === "/") {
-                var decoded = l.search
-                    .slice(1)
-                    .split("&")
-                    .map(function (s) {
-                        return s.replace(/~and~/g, "&");
-                    })
-                    .join("?");
-                window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
-            }
-        })(window.location);
-    </script>
-
-</body>
-
+    <script src="/src/main.jsx" type="module"></script>
+  </body>
 </html>

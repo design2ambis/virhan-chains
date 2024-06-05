@@ -2,9 +2,19 @@ import { React, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Category from "./categoryfetch";
 import MobileCategory from "./mobilecategory";
-import Logo from "../../assets/Virhan-Chains.svg"
+import Logo from "../../assets/Virhan-Chains.svg";
 import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
+
+import "./css/all.css";
+import "./css/animate.css";
+import "./css/bootstrap.min.css";
+import "./css/fancybox.css";
+import "./css/jquery-ui.css";
+import "./css/nice-select.css";
+import "./css/slick.css";
+import "./css/style.css";
+
 function Header() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   var username = localStorage.getItem("token");
@@ -23,15 +33,15 @@ function Header() {
 
   const Openoffcanvus = () => {
     document.querySelector("#MobileSidebar").classList.add("active");
-  }
+  };
   const Closeoffcanvus = () => {
     document.querySelector("#MobileSidebar").classList.remove("active");
-  }
-  const handleLogout = (() => {
+  };
+  const handleLogout = () => {
     localStorage.clear();
     toast.success("Loggedout Successfully");
     window.location.href = "/";
-  })
+  };
   return (
     <>
       {/*header section start*/}
@@ -71,7 +81,7 @@ function Header() {
                       <option>INR</option>
                     </select>
                   </div>
-                  <a href="shop.html" className="item-single text-uppercase">
+                  <a href="#!" className="item-single text-uppercase">
                     store
                   </a>
                   <a href="#" className="item-single text-uppercase">
@@ -98,40 +108,57 @@ function Header() {
               <div className="col-xxl-7 col-xl-8 d-none d-xl-block">
                 <nav className="ur-navmenu">
                   <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/about">About</Link></li>
-                    <li className="has-submenu"><a href="#!">Shop</a><Category /></li>
-                    <li><Link to="/wishlist">Wishlist</Link></li>
-                    <li><Link to="/contact">Contact</Link></li>
+                    <li>
+                      <Link to="/">Home</Link>
+                    </li>
+                    <li>
+                      <Link to="/about">About</Link>
+                    </li>
+                    <li className="has-submenu">
+                      <a href="#!">Shop</a>
+                      <Category />
+                    </li>
+                    <li>
+                      <Link to="/wishlist">Wishlist</Link>
+                    </li>
+                    <li>
+                      <Link to="/contact">Contact</Link>
+                    </li>
                   </ul>
                 </nav>
               </div>
               <div className="col-xxl-3 col-xl-2 col-6">
                 <div className="ur-header-right d-flex align-items-center justify-content-end">
                   <div className="ur-user-links position-relative">
-                    <Link to="/myaccount" className="user-btn text-white">
+                    <a href="#!" className="user-btn text-white">
                       <i className="fa-regular fa-user" />
-                    </Link>
+                    </a>
                     <ul className="position-absolute user-menu">
-                      { isLoggedIn ? (
+                      {isLoggedIn ? (
                         <>
-                          <li><Link to="/myaccount">My Account</Link></li>
-                          <li><a href="#!" onClick={handleLogout}>Logout</a></li>
+                          <li>
+                            <Link to="/myaccount">My Account</Link>
+                          </li>
+                          <li>
+                            <a href="#!" onClick={handleLogout}>
+                              Logout
+                            </a>
+                          </li>
                         </>
                       ) : (
                         <>
-                          <li><Link to="/login">Login</Link></li>
-                          <li><Link to="/register">Sign Up</Link></li>
+                          <li>
+                            <Link to="/login">Login</Link>
+                          </li>
+                          <li>
+                            <Link to="/register">Sign Up</Link>
+                          </li>
                         </>
                       )}
                     </ul>
                   </div>
                   <div className="user-cart d-none d-sm-block">
-                    <Link
-                      to="/cart"
-                      className="cart-btn"
-
-                    >
+                    <Link to="/cart" className="cart-btn">
                       <span className="me-2">
                         <i className="fa-solid fa-basket-shopping" />
                       </span>
@@ -159,10 +186,7 @@ function Header() {
                     </div>
                   </div>
                   <div className="d-sm-none">
-                    <a
-                      href="#"
-                      className="header-link header-search-open"
-                    >
+                    <a href="#" className="header-link header-search-open">
                       <i className="fa-solid fa-magnifying-glass" />
                     </a>
                   </div>
@@ -170,7 +194,6 @@ function Header() {
                     <button
                       type="button"
                       className="ur3-header-toggle offcanvus-toggle d-none d-xl-inline-block"
-
                     >
                       <span />
                       <span />
@@ -199,7 +222,6 @@ function Header() {
           <i className="fa-solid fa-xmark" />
         </a>
         <div className="content-top mb-100">
-
           <p className="mb-0 mt-32 fw-light">
             Distrak Street 2SK Line, Germanygalore@inside-support.com (+125)
             2156-2145
@@ -291,8 +313,12 @@ function Header() {
           <i className="fas fa-xmark" />
         </a>
         <ul className="mobile-nav-menu">
-          <li className="has-submenu"><a href="#">Home</a></li>
-          <li><Link to="/about">About</Link></li>
+          <li className="has-submenu">
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
 
           <MobileCategory />
 
@@ -334,7 +360,7 @@ function Header() {
           <a href="!#" className="drawer-close">
             <i className="fas fa-xmark" />
           </a>
-        </div>        
+        </div>
         <div className="drawer-bottom border-top">
           <div className="d-flex align-items-center justify-content-between mt-4">
             <h6 className="mb-0">Total:</h6>

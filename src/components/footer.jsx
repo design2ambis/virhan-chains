@@ -187,7 +187,7 @@ function Footer() {
               <div className="col-xl-6">
                 <div className="single-product-info">
                   <a
-                    href="shop-list.html"
+                    href="#!"
                     className="category-btn text-uppercase fs-sm secondary-text-color d-inline-block mb-3"
                   >
                     Neaklace

@@ -7,35 +7,34 @@ const Index = () => {
   useEffect(() => {
     // Simulate an API call
     setTimeout(() => {
-      setLoad(false); 
+      setLoad(false);
     }, 2000);
   }, []);
 
   useEffect(() => {
     const fetchData = async () => {
-        try {
-            const rawdata = await fetch(
-                `https://utsarvajewels.com/api/crud?get_random_eight`
-            );
-            const jsondata = await rawdata.json();
+      try {
+        const rawdata = await fetch(
+          `https://utsarvajewels.com/api/crud?get_random_eight`
+        );
+        const jsondata = await rawdata.json();
 
-            if (jsondata) {
-                setrandomData(jsondata.data);
-            }
-        } catch (error) {
-            console.error("Error fetching data:", error);
+        if (jsondata) {
+          setrandomData(jsondata.data);
         }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
     };
 
     fetchData();
-}, []);
+  }, []);
 
   if (isLoaded) {
     return <Loader />;
   }
   return (
     <>
-      
       <section className="ptb-120 bg-white">
         <div className="container">
           <div className="row justify-content-center">
@@ -53,8 +52,8 @@ const Index = () => {
                   data-wow-duration="0.5s"
                 >
                   Our fashion jewellery is inspired by minimalism, focused on
-                  minimal simplicity, perfect for everyday wear and cherished for
-                  years.
+                  minimal simplicity, perfect for everyday wear and cherished
+                  for years.
                 </p>
               </div>
             </div>
@@ -66,7 +65,7 @@ const Index = () => {
                 alt="earrings"
                 className="img-fluid"
               />
-              <a href="shop-list.html" className="text-center text-dark mt-3">
+              <a href="#!" className="text-center text-dark mt-3">
                 <span>Earrings</span>
               </a>
             </div>
@@ -76,7 +75,7 @@ const Index = () => {
                 alt="neaklaces"
                 className="img-fluid"
               />
-              <a href="shop-list.html" className="text-center text-dark mt-3">
+              <a href="#!" className="text-center text-dark mt-3">
                 <span>Neaklaces</span>
               </a>
             </div>
@@ -96,7 +95,7 @@ const Index = () => {
                 alt="bracelets"
                 className="img-fluid"
               />
-              <a href="shop-list.html" className="text-center text-dark mt-3">
+              <a href="#!" className="text-center text-dark mt-3">
                 <span>Bracelets</span>
               </a>
             </div>
@@ -169,9 +168,9 @@ const Index = () => {
                   data-wow-duration="0.5s"
                 >
                   Vestibulam ipsum dolor, sit amet consectetur adipisicing elit.
-                  Possimus deserunt autem vel modi ab doloribus sit omnis iusto quo
-                  voluptas earum reiciendis molestias quam, dolorem laudantium
-                  molestiae
+                  Possimus deserunt autem vel modi ab doloribus sit omnis iusto
+                  quo voluptas earum reiciendis molestias quam, dolorem
+                  laudantium molestiae
                 </h6>
                 <a
                   href="#"
@@ -198,17 +197,17 @@ const Index = () => {
             </div>
           </div>
           <div className="row feature-product-slider slider-spacing">
-          {ran.map((r, index) => (
-            <div className="ur-product-card col-md-3 col-sm-12" key={index}>              
-              <div className="feature-image d-flex align-items-cneter justify-content-center light-bg position-relative">
-                <Link to={`/product/${r.design_no}`}>
-                <img
-                    src={r.design_image}
-                    alt={r.design_no}
-                    className="img-fluid"
-                />
-                </Link>
-                {/* <div className="product-overlay position-absolute">
+            {ran.map((r, index) => (
+              <div className="ur-product-card col-md-3 col-sm-12" key={index}>
+                <div className="feature-image d-flex align-items-cneter justify-content-center light-bg position-relative">
+                  <Link to={`/product/${r.design_no}`}>
+                    <img
+                      src={r.design_image}
+                      alt={r.design_no}
+                      className="img-fluid"
+                    />
+                  </Link>
+                  {/* <div className="product-overlay position-absolute">
                   <div className="product-btns d-flex align-items-center justify-content-center">
                     <a href="#!">
                       <i className="fa-regular fa-heart" />
@@ -221,17 +220,16 @@ const Index = () => {
                     </a>
                   </div>
                 </div> */}
+                </div>
+                <div className="mt-4 text-center">
+                  <Link to={`/product/${r.design_no}`}>
+                    <h6 className="my-2 fw-medium product-title">
+                      {r.design_no}
+                    </h6>
+                  </Link>
+                </div>
               </div>
-              <div className="mt-4 text-center">               
-                <Link to={`/product/${r.design_no}`}>
-                  <h6 className="my-2 fw-medium product-title">
-                    {r.design_no}
-                  </h6>
-                </Link>              
-              </div>
-            </div>
             ))}
-          
           </div>
         </div>
       </section>
@@ -249,7 +247,11 @@ const Index = () => {
                 </h2>
                 <ul className="nav nav-tabs ur-tab-control border-0">
                   <li>
-                    <a href="#bracelets" className="active" data-bs-toggle="tab">
+                    <a
+                      href="#bracelets"
+                      className="active"
+                      data-bs-toggle="tab"
+                    >
                       01. Bracelets
                     </a>
                   </li>
@@ -290,7 +292,7 @@ const Index = () => {
                           SALE
                         </span>
                         <div className="feature-image d-flex align-items-cneter justify-content-center">
-                          <a href="product-details.html">
+                          <a href="#!">
                             <img
                               src="assets/images/products/product-6.png"
                               alt="rings"
@@ -300,12 +302,12 @@ const Index = () => {
                         </div>
                         <div className="text-center pb-40">
                           <a
-                            href="shop-list.html"
+                            href="#!"
                             className="secondary-text-color text-uppercase"
                           >
                             Necklaces
                           </a>
-                          <a href="product-details.html">
+                          <a href="#!">
                             <h5 className="my-2 fw-medium product-title">
                               Hitmor 24k Neaklaces
                             </h5>
@@ -335,7 +337,7 @@ const Index = () => {
                           SALE
                         </span>
                         <div className="feature-image d-flex align-items-cneter justify-content-center">
-                          <a href="product-details.html">
+                          <a href="#!">
                             <img
                               src="assets/images/products/product-4.png"
                               alt="rings"
@@ -345,12 +347,12 @@ const Index = () => {
                         </div>
                         <div className="text-center pb-40">
                           <a
-                            href="shop-list.html"
+                            href="#!"
                             className="secondary-text-color text-uppercase"
                           >
                             Bracelates
                           </a>
-                          <a href="product-details.html">
+                          <a href="#!">
                             <h5 className="my-2 fw-medium product-title">
                               Green Diamond Earring
                             </h5>
@@ -380,7 +382,7 @@ const Index = () => {
                           SALE
                         </span>
                         <div className="feature-image d-flex align-items-cneter justify-content-center">
-                          <a href="product-details.html">
+                          <a href="#!">
                             <img
                               src="assets/images/products/product-3.png"
                               alt="rings"
@@ -390,12 +392,12 @@ const Index = () => {
                         </div>
                         <div className="text-center pb-40">
                           <a
-                            href="shop-list.html"
+                            href="#!"
                             className="secondary-text-color text-uppercase"
                           >
                             Earrings
                           </a>
-                          <a href="product-details.html">
+                          <a href="#!">
                             <h5 className="my-2 fw-medium product-title">
                               Blue Cool Earring
                             </h5>
@@ -425,7 +427,7 @@ const Index = () => {
                           SALE
                         </span>
                         <div className="feature-image d-flex align-items-cneter justify-content-center">
-                          <a href="product-details.html">
+                          <a href="#!">
                             <img
                               src="assets/images/products/product-2.png"
                               alt="rings"
@@ -435,12 +437,12 @@ const Index = () => {
                         </div>
                         <div className="text-center pb-40">
                           <a
-                            href="shop-list.html"
+                            href="#!"
                             className="secondary-text-color text-uppercase"
                           >
                             Rings
                           </a>
-                          <a href="product-details.html">
+                          <a href="#!">
                             <h5 className="my-2 fw-medium product-title">
                               Amazing Gold Plated
                             </h5>
@@ -474,7 +476,7 @@ const Index = () => {
               <div className="ur-product-card position-relative card-sm-small">
                 <span className="">50%</span>
                 <div className="feature-image d-flex align-items-cneter justify-content-center light-bg position-relative">
-                  <a href="product-details.html">
+                  <a href="#!">
                     <img
                       src="assets/images/products/product-7.png"
                       alt="rings"
@@ -496,13 +498,10 @@ const Index = () => {
                   </div>
                 </div>
                 <div className="mt-4">
-                  <a
-                    href="shop-list.html"
-                    className="secondary-text-color text-uppercase"
-                  >
+                  <a href="#!" className="secondary-text-color text-uppercase">
                     Necklaces
                   </a>
-                  <a href="product-details.html">
+                  <a href="#!">
                     <h5 className="my-2 fw-medium product-title">
                       Hitmor 24k Neaklaces
                     </h5>
@@ -539,13 +538,10 @@ const Index = () => {
                   </div>
                 </div>
                 <div className="mt-4">
-                  <a
-                    href="shop-list.html"
-                    className="secondary-text-color text-uppercase"
-                  >
+                  <a href="#!" className="secondary-text-color text-uppercase">
                     Gold
                   </a>
-                  <a href="product-details.html">
+                  <a href="#!">
                     <h5 className="my-2 fw-medium product-title">
                       Amazing Gold Plated
                     </h5>
@@ -583,13 +579,10 @@ const Index = () => {
                   </div>
                 </div>
                 <div className="mt-4">
-                  <a
-                    href="shop-list.html"
-                    className="secondary-text-color text-uppercase"
-                  >
+                  <a href="#!" className="secondary-text-color text-uppercase">
                     Rings
                   </a>
-                  <a href="product-details.html">
+                  <a href="#!">
                     <h5 className="my-2 fw-medium product-title">
                       Hoten Diamond Ring
                     </h5>
@@ -602,9 +595,8 @@ const Index = () => {
             </div>
             <div className="col-xl-3 col-lg-4 col-sm-6">
               <div className="ur-product-card position-relative card-sm-small">
-
                 <div className="feature-image d-flex align-items-cneter justify-content-center light-bg position-relative">
-                  <a href="product-details.html">
+                  <a href="#!">
                     <img
                       src="assets/images/products/product-3.png"
                       alt="rings"
@@ -626,13 +618,10 @@ const Index = () => {
                   </div>
                 </div>
                 <div className="mt-4">
-                  <a
-                    href="shop-list.html"
-                    className="secondary-text-color text-uppercase"
-                  >
+                  <a href="#!" className="secondary-text-color text-uppercase">
                     Earrings
                   </a>
-                  <a href="product-details.html">
+                  <a href="#!">
                     <h5 className="my-2 fw-medium product-title">
                       Green Ball Earrings
                     </h5>
@@ -647,7 +636,7 @@ const Index = () => {
             <div className="col-xl-3 col-lg-4 col-sm-6">
               <div className="ur-product-card position-relative card-sm-small">
                 <div className="feature-image d-flex align-items-cneter justify-content-center light-bg position-relative">
-                  <a href="product-details.html">
+                  <a href="#!">
                     <img
                       src="assets/images/products/product-2.png"
                       alt="rings"
@@ -669,13 +658,10 @@ const Index = () => {
                   </div>
                 </div>
                 <div className="mt-4">
-                  <a
-                    href="shop-list.html"
-                    className="secondary-text-color text-uppercase"
-                  >
+                  <a href="#!" className="secondary-text-color text-uppercase">
                     Gold
                   </a>
-                  <a href="product-details.html">
+                  <a href="#!">
                     <h5 className="my-2 fw-medium product-title">
                       Witen Gold Earring
                     </h5>
@@ -689,7 +675,7 @@ const Index = () => {
             <div className="col-xl-3 col-lg-4 col-sm-6">
               <div className="ur-product-card position-relative card-sm-small">
                 <div className="feature-image d-flex align-items-cneter justify-content-center light-bg position-relative">
-                  <a href="product-details.html">
+                  <a href="#!">
                     <img
                       src="assets/images/products/product-1.png"
                       alt="rings"
@@ -711,18 +697,17 @@ const Index = () => {
                   </div>
                 </div>
                 <div className="mt-4">
-                  <a
-                    href="shop-list.html"
-                    className="secondary-text-color text-uppercase"
-                  >
+                  <a href="#!" className="secondary-text-color text-uppercase">
                     Diamond
                   </a>
-                  <a href="product-details.html">
+                  <a href="#!">
                     <h5 className="my-2 fw-medium product-title">
                       Blue Diamond Rings
                     </h5>
                   </a>
-                  <span className="primary-text-color fs-sm fw-medium">$50.00</span>
+                  <span className="primary-text-color fs-sm fw-medium">
+                    $50.00
+                  </span>
                   <del className="ms-3 fw-light text-color">$75</del>
                 </div>
               </div>
@@ -730,7 +715,7 @@ const Index = () => {
             <div className="col-xl-3 col-lg-4 col-sm-6">
               <div className="ur-product-card position-relative card-sm-small">
                 <div className="feature-image d-flex align-items-cneter justify-content-center light-bg position-relative">
-                  <a href="product-details.html">
+                  <a href="#!">
                     <img
                       src="assets/images/products/product-7.png"
                       alt="rings"
@@ -752,13 +737,10 @@ const Index = () => {
                   </div>
                 </div>
                 <div className="mt-4">
-                  <a
-                    href="shop-list.html"
-                    className="secondary-text-color text-uppercase"
-                  >
+                  <a href="#!" className="secondary-text-color text-uppercase">
                     Rings
                   </a>
-                  <a href="product-details.html">
+                  <a href="#!">
                     <h5 className="my-2 fw-medium product-title">
                       Hitmor 24k Neaklaces
                     </h5>
@@ -773,7 +755,7 @@ const Index = () => {
               <div className="ur-product-card position-relative card-sm-small">
                 <span className="">50%</span>
                 <div className="feature-image d-flex align-items-cneter justify-content-center light-bg position-relative">
-                  <a href="product-details.html">
+                  <a href="#!">
                     <img
                       src="assets/images/products/product-6.png"
                       alt="rings"
@@ -795,13 +777,10 @@ const Index = () => {
                   </div>
                 </div>
                 <div className="mt-4">
-                  <a
-                    href="shop-list.html"
-                    className="secondary-text-color text-uppercase"
-                  >
+                  <a href="#!" className="secondary-text-color text-uppercase">
                     Earrings
                   </a>
-                  <a href="product-details.html">
+                  <a href="#!">
                     <h5 className="my-2 fw-medium product-title">
                       Witen Gold Earring
                     </h5>
@@ -814,7 +793,7 @@ const Index = () => {
             </div>
           </div>
           <div className="text-center mt-60">
-            <a href="shop-list.html" className="template-btn primary-btn">
+            <a href="#!" className="template-btn primary-btn">
               <span>View All</span>
             </a>
           </div>
@@ -823,9 +802,7 @@ const Index = () => {
       {/*latest arrival end*/}
 
       <span className="theme-devider" />
-
     </>
-
   );
 };
 

@@ -58,12 +58,12 @@ const About = () => {
                   convallis a pellentesque nec, egestas non nisi. Quisque velit
                   nisi, pretium ut lacinia in, elementum id enim.
                 </p>
-                <a
-                  href="contact.html"
+                <Link
+                  to="/contact"
                   className="template-btn primary-btn text-uppercase"
                 >
                   <span>Contact Us</span>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
