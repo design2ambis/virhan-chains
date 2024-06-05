@@ -1,6 +1,7 @@
 {
   "name": "virhan-chains",
   "private": true,
+  "home": "https://design2ambis.github.io/virhan-chains/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
