@@ -94,7 +94,6 @@ const Product = () => {
     }
   };
 
-
   return (
     <>
       {/*breadcrumb section start*/}
@@ -115,7 +114,7 @@ const Product = () => {
         <div className="container pb-5 pb-sm-0">
           <div className="product-single">
             <div className="row g-4">
-              <div className="col-xxl-6">
+              <div className="col-md-6 col-sm-12">
                 <div className="product-single-slider d-flex">
                   <div className="product-nav-slider-wrapper">
                     {/* <div className="product-nav-slider">
@@ -136,6 +135,7 @@ const Product = () => {
                             src={product.design_image}
                             alt="not found"
                             className="img-fluid"
+                            // width={"600"}
                           />
                         </div>
                       </div>
@@ -143,7 +143,7 @@ const Product = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-xxl-6">
+              <div className="col-md-6 col-sm-12">
                 <div className="single-product-info">
                   <a
                     href="#!"
@@ -471,12 +471,12 @@ const Product = () => {
                         <i className="fa-solid fa-basket-shopping" />
                       </span>
                     </button>
-                    <button type="button" className="wish_btn">
+                    {/* <button type="button" className="wish_btn">
                       <span className="me-2">
                         <i className="fa-regular fa-heart" />
                       </span>
                       Add to Wishlist
-                    </button>
+                    </button> */}
                   </div>
                   <ul className="product-meta mt-32">
                     <li>SIZE : {product.size}</li>

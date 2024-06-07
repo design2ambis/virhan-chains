@@ -14,9 +14,9 @@ function Footer() {
                     <span className="text-white fw-medium fs-sm d-block mt-40">
                       Quick Contact
                     </span>
-                    <a href="#">
+                    <a href="tel:+91 91500 16195">
                       <h3 className="text-white fw-normal mt-1">
-                        +(286) - 0124.21563
+                        +91 91500 16195
                       </h3>
                     </a>
                     <div className="ur3-footer-social mt-32">
@@ -140,7 +140,11 @@ function Footer() {
                 <div className="row align-items-center g-3">
                   <div className="col-md-6">
                     <p className="mb-0 text-white">
-                      © 2022 Virhan Chains Powered by <a href="http://nivsjewels.com" target="_blank">Nivsjewels</a>. All Rights Reserved
+                      © 2022 Virhan Chains Powered by{" "}
+                      <a href="http://nivsjewels.com" target="_blank">
+                        Nivsjewels
+                      </a>
+                      . All Rights Reserved
                     </p>
                   </div>
                   <div className="col-md-6">
@@ -155,7 +159,6 @@ function Footer() {
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </footer>
