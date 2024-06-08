@@ -4,6 +4,7 @@ import Loader from "../components/loader";
 import swal from "sweetalert";
 
 const Checkout = () => {
+
     document.title = "Virhan Chains - Checkout";
 
     const [isLoaded, setLoad] = useState(true);
@@ -25,8 +26,8 @@ const Checkout = () => {
         zipcode: '',
         phone: '',
         save: false,
-        token: username
-        // order_confirmation: ''
+        token: username,
+        order_confirmation: ''
     });
 
     const handleChange = (event) => {
@@ -50,7 +51,7 @@ const Checkout = () => {
         try {
             setLoad(true);
             const cartResponse = await fetch(
-                "https://nivsjewels.com/api/select?get_cart&token=" + username
+                "https://virhanchains.nivsjewels.com/api/select?get_cart&token=" + username
             );
             const cartData = await cartResponse.json();
             if (cartData.status === 200) {
@@ -70,7 +71,7 @@ const Checkout = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('https://nivsjewels.com/api/insert', {
+            const response = await fetch('https://virhanchains.nivsjewels.com/api/insert', {
                 method: 'POST',
                 body: JSON.stringify(formData)
             });
@@ -81,7 +82,7 @@ const Checkout = () => {
                     text: 'Order Placed Successfully',
                     icon: 'success'
                 }).then(() => {
-                    window.location.href = '/myaccount'
+                    window.location.href = '/orders'
                 });
             }
             console.log('Form submitted:', data);

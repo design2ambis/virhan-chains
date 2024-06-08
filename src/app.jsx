@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
-
 import Header from "./components/header";
 import Footer from "./components/footer";
 import Home from "./pages/index";
@@ -15,6 +14,9 @@ import Product from "./pages/product";
 import Login from "./pages/login";
 import Register from "./pages/register";
 import Checkout from "./pages/checkout";
+import Orders from "./pages/orders";
+import Orderdetail from "./pages/orderdetail";
+
 // import Account from "./pages/my-account";
 // import Error404 from "./pages/404"
 // import Register from "./pages/register";
@@ -36,13 +38,14 @@ function App() {
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
-        <Route path="/shop/:cat/:subcat/:page/:wgt/:type/:collection/:manu" element={<Shop/>} />
+        <Route path="/shop/:cat/:subcat/:page/:wgt/:type/:collection/:manu" element={<Shop />} />
         <Route path="/product/:prono" element={<Product />} />
         <Route path="/login" element={<Login />} />
         <Route path="/login/:message" element={<Login />} />
-        <Route path="/register"  element={<Register />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/orders" element={<Orders />} />
+        <Route path="/orderdetail/:orderId" element={<Orderdetail />} />
         {/*<Route path="/account" element={<Account/>} />
-        <Route path="/order-details/:orderId" element={<Orderdetails />} /> */}
 
 
         {/* <Route path="*" element={<Error404 />} /> Fallback route for 404 */}

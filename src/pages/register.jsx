@@ -6,10 +6,13 @@ import Loader from '../components/loader';
 import swal from 'sweetalert';
 
 const Register = () => {
+
+    document.title = "Virhan Chains - Register";
+
     const [isLoaded, setLoad] = useState(false);
 
     document.title = "Virhan Chains - Register";
-    
+
     const [formData, setFormData] = useState({
         customerName: "",
         mobile: "",
@@ -50,7 +53,7 @@ const Register = () => {
         // If validation passes, submit the form data
         setLoad(true);
         try {
-            const response = await fetch("https://nivsjewels.com/api/register", {
+            const response = await fetch("https://virhanchains.nivsjewels.com/api/register", {
                 method: "POST",
                 body: JSON.stringify(formData),
             });

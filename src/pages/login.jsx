@@ -5,6 +5,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import swal from 'sweetalert';
 
 const Login = () => {
+
+    document.title = "Virhan Chains - Login";
+
     const { message } = useParams();
 
     useEffect(() => {
@@ -36,7 +39,7 @@ const Login = () => {
 
         try {
 
-            const response = await fetch('https://nivsjewels.com/api/signin', {
+            const response = await fetch('https://virhanchains.nivsjewels.com/api/signin', {
                 method: 'POST',
                 body: JSON.stringify({
                     email,

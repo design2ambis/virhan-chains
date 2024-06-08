@@ -21,9 +21,9 @@ const Gridproducts = (props) => {
     .split(" ")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ")} | ${props.subcat
-    .split(" ")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(" ")}`;
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ")}`;
 
   useEffect(() => {
     setLoad(true);
@@ -90,7 +90,7 @@ const Gridproducts = (props) => {
         add_cart: "",
       };
       try {
-        const cartraw = await fetch(`https://nivsjewels.com/api/update`, {
+        const cartraw = await fetch(`https://virhanchains.nivsjewels.com/api/update`, {
           method: "POST",
           body: JSON.stringify(cartdata),
         });
@@ -122,7 +122,7 @@ const Gridproducts = (props) => {
     };
     if (token && token != null && token != "") {
       try {
-        const req = await fetch(`https://nivsjewels.com/api/update`, {
+        const req = await fetch(`https://virhanchains.nivsjewels.com/api/update`, {
           method: "POST",
           body: JSON.stringify(postdata),
         });

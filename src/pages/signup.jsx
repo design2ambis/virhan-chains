@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Signup = () => {
+
+    document.title = "Virhan Chains - Signup";
   return (
       <>
           {/*breadcrumb section start*/}

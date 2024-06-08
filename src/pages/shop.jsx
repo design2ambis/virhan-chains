@@ -3,6 +3,8 @@ import { Link, useParams } from "react-router-dom";
 import Gridproducts from "../components/gridproducts";
 
 const Shop = () => {
+
+  document.title = "Virhan Chains - Shop";
   const { cat, subcat, page, wgt, type, collection, manu } = useParams();
   return (
     <>

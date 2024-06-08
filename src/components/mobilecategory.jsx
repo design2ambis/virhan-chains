@@ -24,7 +24,7 @@ const MobileCategory = () => {
     }, []);
 
     const openMobDropdown = ((a) => {
-        
+
         var submenu = document.getElementById(`subcatList_${a}`);
         var icon = document.getElementById(`icon_${a}`);
         // console.log(submenu);
@@ -44,8 +44,8 @@ const MobileCategory = () => {
 
     return (
         <>
-            {categories.map((category,index) => (
-                <li className="has-submenu" key={`mobile${category.id}`}
+            {categories.map((category, index) => (
+                <li className="has-submenu" key={index}
                     onClick={() => openMobDropdown(category.id)}
                 >
                     <a href="#!">{category.name}</a>

@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import Loader from '../components/loader';
 
 const Contact = () => {
+
+    document.title = "Virhan Chains - Contact";
     const [isLoaded, setLoad] = useState(true);
     useEffect(() => {
         // Simulate an API call
@@ -22,8 +24,8 @@ const Contact = () => {
             >
                 <div className="container">
                     <p className="breadcrumb-text fw-light mb-0">
-                        <Link to="/">Home</Link>
-                        <span className="primary-text-color">Contact</span>
+                        <Link to="/">Home </Link>
+                        <span className="primary-text-color">/ Contact</span>
                     </p>
                 </div>
             </div>

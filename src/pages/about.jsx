@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Loader from '../components/loader';
 
 const About = () => {
+  document.title = "Virhan Chains - About";
   const [isLoaded, setLoad] = useState(true);
   useEffect(() => {
     // Simulate an API call
@@ -23,7 +24,7 @@ const About = () => {
         <div className="container">
           <p className="breadcrumb-text fw-light mb-0">
             <Link to="/">Home</Link>
-            <span className="primary-text-color">About Company</span>
+            <span className="primary-text-color">/ About</span>
           </p>
         </div>
       </div>
@@ -43,10 +44,10 @@ const About = () => {
             </div>
             <div className="ps-xl-5 col-xl-5 col-lg-6">
               <div className="history-content">
-                <span className="secondary-text-color text-uppercase fs-sm d-block mb-4">
+                {/* <span className="secondary-text-color text-uppercase fs-sm d-block mb-4">
                   Company History
-                </span>
-                <h2 className="display-3 fw-normal mb-5">About Uroan</h2>
+                </span> */}
+                <h2 className="display-3 fw-normal mb-5 ">About <span className="secondary-text-color text-uppercase">Virhan</span></h2>
                 <p className="mb-4 primary-text-color">
                   Mauris blandit aliquet elit eget tincidunt nibh pulvinar uisque
                   velit nisi pretium ut lacinia in elementum id enim velit nisi
@@ -71,7 +72,7 @@ const About = () => {
       </section>
       {/*history section end*/}
       {/*video section start*/}
-      <div
+      {/* <div
         className="video-box position-relative z-1 overflow-hidden"
         data-background="assets/images/about/video-bg.jpg"
       >
@@ -82,13 +83,42 @@ const About = () => {
         >
           <i className="fas fa-play" />
         </a>
-      </div>
+      </div> */}
       {/*video sectin end*/}
+
+      {/*newsticker area start*/}
+      <div className="ur-ticker-area overflow-hidden">
+        <div className="ur-ticker-wrapper primary-bg-color">
+          <div className="ur-ticker">
+            <span className="text-white text-uppercase">
+              Get 20% Discount on your first product
+            </span>
+            <span className="text-white text-uppercase">
+              DISCOVER LATEST COLLECTIONS AND TOP DESIGNERS{" "}
+            </span>
+            <span className="text-white text-uppercase">
+              10% DISCOUNT FOR REGISTERED USERS
+            </span>
+            <span className="text-white text-uppercase">
+              Get 20% Discount on your first product
+            </span>
+            <span className="text-white text-uppercase">
+              DISCOVER LATEST COLLECTIONS AND TOP DESIGNERS
+            </span>
+            <span className="text-white text-uppercase">
+              10% DISCOUNT FOR REGISTERED USERS
+            </span>
+          </div>
+        </div>
+      </div>
+      {/*newsticker area end*/}
+
+
       {/* mission area start*/}
       <section className="ptb-120 bg-white overflow-hidden">
         <div className="container">
           <div className="row align-items-center g-5">
-            <div className="col-xl-4 col-lg-6">
+            <div className="col-xl-6 col-lg-6">
               <div className="theme-card">
                 <div className="overflow-hidden">
                   <img
@@ -98,20 +128,19 @@ const About = () => {
                   />
                 </div>
                 <div className="mt-40">
-                  <h3 className="mb-30">Our Mission</h3>
+                  <h3 className="mb-30">Our Mission & Vision</h3>
                   <p className="fw-light">
-                    Curasre potenti metus natoquefui sociis tempor facilisis tempus
-                    ridiaclus porta porttitor feugiat consequat aliquet maecenas
-                    turpis.
+                    Our mission is to create exceptional jewelry that celebrates individuality and
+                    special moments while upholding the highest standards of quality, craftsmanship, and ethical practices.
                   </p>
                   <p className="fw-light">
-                    Dui integer est lobortis fusce odio curabitur accumsan auctor
-                    scelerisque
+                    Our vision is to be a leading jewelry brand recognized globally for our exceptional craftsmanship,
+                    ethical practices, and commitment to customer satisfaction.
                   </p>
                 </div>
               </div>
             </div>
-            <div className="col-xl-4 d-none d-xl-block">
+            {/* <div className="col-xl-4 d-none d-xl-block">
               <div className="feature-image about-mission-box">
                 <img
                   src="assets/images/about/2.jpg"
@@ -119,13 +148,14 @@ const About = () => {
                   className="img-fluid"
                 />
               </div>
-            </div>
-            <div className="col-xl-4 col-lg-6">
+            </div> */}
+            <div className="col-xl-6 col-lg-6">
               <div>
                 <h3 className="mb-32">Our Goals</h3>
                 <p className="fw-light mb-40">
-                  Metus natoquefui sociis tempor facili tempus ridiclus porta
-                  porttitor feugiat consequat.
+                  At Virhan Chains, our goals are rooted in our commitment to excellence, sustainability, and customer satisfaction.
+                  We believe that each piece of jewelry is more than just an accessory;
+                  it is a symbol of elegance, craftsmanship, and a cherished memory. Here’s what drives us:
                 </p>
                 <div className="accordion ur2-accordion" id="ur2_accordion">
                   <div className="accordion-item">
@@ -135,7 +165,7 @@ const About = () => {
                         data-bs-toggle="collapse"
                         className="collapsed"
                       >
-                        Providing Pure Grade Jewelry
+                        <b>Unparalleled Quality & Craftsmanship</b>
                       </a>
                     </div>
                     <div
@@ -145,9 +175,8 @@ const About = () => {
                     >
                       <div className="accordion-body px-0 pb-0">
                         <p className="mb-0 fw-light mb-0">
-                          Lectus litra mollis eros sollicitudin massa dapibus
-                          ultrices per suscipit montes accumsan curabitur sed
-                          aliquam volutpat porta naquis
+                          Our primary goal is to create unique and timeless jewelry that stands out in both design and quality.
+                          Each piece is meticulously crafted by skilled artisans who bring decades of experience to the table.
                         </p>
                       </div>
                     </div>
@@ -155,7 +184,7 @@ const About = () => {
                   <div className="accordion-item">
                     <div className="accordion-header">
                       <a href="#acc_2" data-bs-toggle="collapse">
-                        Easy Customer Service Policy
+                        <b>Customer Satisfaction</b>
                       </a>
                     </div>
                     <div
@@ -165,9 +194,8 @@ const About = () => {
                     >
                       <div className="accordion-body px-0 pb-0">
                         <p className="mb-0 fw-light mb-0">
-                          Lectus litra mollis eros sollicitudin massa dapibus
-                          ultrices per suscipit montes accumsan curabitur sed
-                          aliquam volutpat porta naquis
+                          We strive to provide a personalized shopping experience tailored to each customer’s needs.
+                          Whether you’re looking for a bespoke engagement ring or a timeless piece for everyday wear, our team is here to guide you through every step.
                         </p>
                       </div>
                     </div>
@@ -175,7 +203,7 @@ const About = () => {
                   <div className="accordion-item">
                     <div className="accordion-header">
                       <a href="#acc_3" data-bs-toggle="collapse">
-                        Easy Customer Service Policy
+                        <b>Sustainable & Ethical Practices</b>
                       </a>
                     </div>
                     <div
@@ -185,9 +213,65 @@ const About = () => {
                     >
                       <div className="accordion-body px-0 pb-0">
                         <p className="mb-0 fw-light mb-0">
-                          Lectus litra mollis eros sollicitudin massa dapibus
-                          ultrices per suscipit montes accumsan curabitur sed
-                          aliquam volutpat porta naquis
+                          Sustainability is at the core of our business.We are dedicated to minimizing
+                          our environmental footprint by using recycled metals and implementing eco-friendly manufacturing processes.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="accordion-item">
+                    <div className="accordion-header">
+                      <a href="#acc_4" data-bs-toggle="collapse">
+                        <b>Innovation & Creativity</b>
+                      </a>
+                    </div>
+                    <div
+                      className="accordion-collapse collapse"
+                      id="acc_4"
+                      data-bs-parent="#ur2_accordion"
+                    >
+                      <div className="accordion-body px-0 pb-0">
+                        <p className="mb-0 fw-light mb-0">
+                          Staying at the forefront of jewelry design and manufacturing is a key goal.
+                          We continuously invest in new technologies and innovative techniques to bring our creative visions to life.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="accordion-item">
+                    <div className="accordion-header">
+                      <a href="#acc_5" data-bs-toggle="collapse">
+                        <b>Community Engagement</b>
+                      </a>
+                    </div>
+                    <div
+                      className="accordion-collapse collapse"
+                      id="acc_5"
+                      data-bs-parent="#ur2_accordion"
+                    >
+                      <div className="accordion-body px-0 pb-0">
+                        <p className="mb-0 fw-light mb-0">
+                          We believe in giving back to the community by supporting local artisans and craftsmen.
+                          Our collaborations with local talent not only enrich our designs but also help sustain traditional crafts and skills.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="accordion-item">
+                    <div className="accordion-header">
+                      <a href="#acc_6" data-bs-toggle="collapse">
+                        <b>Transparent & Honest Practices</b>
+                      </a>
+                    </div>
+                    <div
+                      className="accordion-collapse collapse"
+                      id="acc_6"
+                      data-bs-parent="#ur2_accordion"
+                    >
+                      <div className="accordion-body px-0 pb-0">
+                        <p className="mb-0 fw-light mb-0">
+                          Transparency is vital in all our dealings.
+                          We ensure clear and honest communication about the quality, origin, and pricing of our jewelry.
                         </p>
                       </div>
                     </div>
@@ -221,14 +305,15 @@ const About = () => {
                 </span>
                 <h6 className="text-white mt-4 mb-3">Super Easy Shipping</h6>
                 <p className="mb-30 fw-light">
-                  Proin hac augue integer tempor porta fringilla sapien
+                  We prioritize your convenience with our Shipping.
+                  Enjoy a seamless, fast, and reliable delivery experience.
                 </p>
-                <a href="#" className="explore-btn">
+                {/* <a href="#" className="explore-btn">
                   Learn More{" "}
                   <span className="ms-2">
                     <i className="fas fa-arrow-right" />
                   </span>
-                </a>
+                </a> */}
               </div>
             </div>
             <div className="col-xl-3 col-lg-4 col-md-6">
@@ -261,14 +346,14 @@ const About = () => {
                 </span>
                 <h6 className="text-white mt-4 mb-3">Easy Return Policy</h6>
                 <p className="mb-30 fw-light">
-                  Proin hac augue integer tempor porta fringilla sapien
+                  Our Policy ensures a hassle-free experience if you're not completely satisfied with your purchase.
                 </p>
-                <a href="#" className="explore-btn">
+                {/* <a href="#" className="explore-btn">
                   Learn More{" "}
                   <span className="ms-2">
                     <i className="fas fa-arrow-right" />
                   </span>
-                </a>
+                </a> */}
               </div>
             </div>
             <div className="col-xl-3 col-lg-4 col-md-6">
@@ -333,14 +418,15 @@ const About = () => {
                 </span>
                 <h6 className="text-white mt-4 mb-3">Book an Appointment</h6>
                 <p className="mb-30 fw-light">
-                  Proin hac augue integer tempor porta fringilla sapien
+                  we offer personalized service to help you find the perfect piece.
+                  Book an appointment with our experts today!
                 </p>
-                <a href="#" className="explore-btn">
+                {/* <a href="#" className="explore-btn">
                   Learn More{" "}
                   <span className="ms-2">
                     <i className="fas fa-arrow-right" />
                   </span>
-                </a>
+                </a> */}
               </div>
             </div>
             <div className="col-xl-3 col-lg-4 col-md-6">
@@ -369,14 +455,14 @@ const About = () => {
                 </span>
                 <h6 className="text-white mt-4 mb-3">1 Years Warranty</h6>
                 <p className="mb-30 fw-light">
-                  Proin hac augue integer tempor porta fringilla sapien
+                  At Virhan Chains, we stand behind the quality of our pieces with a comprehensive 1-year warranty.
                 </p>
-                <a href="#" className="explore-btn">
+                {/* <a href="#" className="explore-btn">
                   Learn More{" "}
                   <span className="ms-2">
                     <i className="fas fa-arrow-right" />
                   </span>
-                </a>
+                </a> */}
               </div>
             </div>
           </div>
@@ -384,7 +470,7 @@ const About = () => {
       </section>
       {/*ab feature section end*/}
       {/*team section start*/}
-      <section className="team-section ptb-120 bg-white overflow-hidden">
+      {/* <section className="team-section ptb-120 bg-white overflow-hidden">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-xl-6">
@@ -486,10 +572,10 @@ const About = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/*team section end*/}
       {/*feedback section start*/}
-      <section
+      {/* <section
         className="ur2-feedback-section ptb-120 overflow-hidden"
         data-background="assets/images/banner/light-background.jpg"
       >
@@ -535,34 +621,9 @@ const About = () => {
             </span>
           </div>
         </div>
-      </section>
+      </section> */}
       {/*feedback section end*/}
-      {/*newsticker area start*/}
-      <div className="ur-ticker-area overflow-hidden">
-        <div className="ur-ticker-wrapper primary-bg-color">
-          <div className="ur-ticker">
-            <span className="text-white text-uppercase">
-              Get 20% Discount on your first product
-            </span>
-            <span className="text-white text-uppercase">
-              DISCOVER LATEST COLLECTIONS AND TOP DESIGNERS{" "}
-            </span>
-            <span className="text-white text-uppercase">
-              10% DISCOUNT FOR REGISTERED USERS
-            </span>
-            <span className="text-white text-uppercase">
-              Get 20% Discount on your first product
-            </span>
-            <span className="text-white text-uppercase">
-              DISCOVER LATEST COLLECTIONS AND TOP DESIGNERS
-            </span>
-            <span className="text-white text-uppercase">
-              10% DISCOUNT FOR REGISTERED USERS
-            </span>
-          </div>
-        </div>
-      </div>
-      {/*newsticker area end*/}
+      
       {/*blog section start*/}
       <section className="ur2-blog-section ptb-120 bg-white">
         <div className="container">

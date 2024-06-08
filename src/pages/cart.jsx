@@ -5,6 +5,7 @@ import Loader from '../components/loader';
 const Cart = () => {
 
     document.title = "Virhan Chains - Cart";
+
     const [isLoaded, setLoad] = useState(true);
     const [cart, setCart] = useState([]);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -21,7 +22,7 @@ const Cart = () => {
     const fetchData = async () => {
         try {
             const cartResponse = await fetch(
-                "https://nivsjewels.com/api/select?get_cart&token=" + username
+                "https://virhanchains.nivsjewels.com/api/select?get_cart&token=" + username
             );
             const cartData = await cartResponse.json();
             if (cartData.status === 200) {
@@ -45,7 +46,7 @@ const Cart = () => {
         try {
             setLoad(true);
             const cartResponse = await fetch(
-                `https://nivsjewels.com/api/update?update_cart&id=${id}&qty=${qty}&type=${type}`
+                `https://virhanchains.nivsjewels.com/api/update?update_cart&id=${id}&qty=${qty}&type=${type}`
             );
             const cartData = await cartResponse.json();
             if (cartData.update_sta === true) {

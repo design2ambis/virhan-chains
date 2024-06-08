@@ -137,7 +137,7 @@ function Header() {
                       {isLoggedIn ? (
                         <>
                           <li>
-                            <Link to="/myaccount">My Account</Link>
+                            <Link to="/orders">My Orders</Link>
                           </li>
                           <li>
                             <a href="#!" onClick={handleLogout}>

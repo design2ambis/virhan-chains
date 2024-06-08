@@ -5,7 +5,8 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Wishlist = () => {
-  document.title = "Virhan Chains - Cart";
+  document.title = "Virhan Chains - Wishlist";
+
   const [isLoaded, setLoad] = useState(true);
   const [wishlist, setWishlist] = useState([]);
   const [wish, setWish] = useState(false);
@@ -24,7 +25,7 @@ const Wishlist = () => {
   const fetchData = async () => {
     try {
       const wish = await fetch(
-        "https://nivsjewels.com/api/select?get_wishlist&token=" + username
+        "https://virhanchains.nivsjewels.com/api/select?get_wishlist&token=" + username
       );
       const fetchdata = await wish.json();
       if (fetchdata.status === 200) {
@@ -46,7 +47,7 @@ const Wishlist = () => {
   const Removewishlist = async (id) => {
     try {
       const wish = await fetch(
-        `https://nivsjewels.com/api/update?removeWishlist&token=${username}&id=${id}`
+        `https://virhanchains.nivsjewels.com/api/update?removeWishlist&token=${username}&id=${id}`
       );
       const fetchdata = await wish.json();
       if (fetchdata.status === true) {
@@ -71,7 +72,7 @@ const Wishlist = () => {
         add_cart: "",
       };
       try {
-        const cartraw = await fetch(`https://nivsjewels.com/api/update`, {
+        const cartraw = await fetch(`https://virhanchains.nivsjewels.com/api/update`, {
           method: "POST",
           body: JSON.stringify(cartdata),
         });
@@ -79,7 +80,7 @@ const Wishlist = () => {
         const cartjson = await cartraw.json();
 
         if (cartjson.status == true) {
-          toast.success(`${prono} Moved to Cart Successfully!`);
+          toast.success(`${no} Moved to Cart Successfully!`);
           fetchData();
         } else {
           toast.error("Something Went Wrong");
@@ -106,7 +107,7 @@ const Wishlist = () => {
         <div className="container">
           <p className="breadcrumb-text fw-light mb-0">
             <Link to="/">Home</Link>
-            <span className="primary-text-color">Wishlist</span>
+            <span className="primary-text-color">/ Wishlist</span>
           </p>
         </div>
       </div>

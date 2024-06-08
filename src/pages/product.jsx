@@ -4,6 +4,9 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Product = () => {
+
+  document.title = "Virhan Chains - Product";
+
   const { prono } = useParams();
   const [product, setproduct] = useState([]);
   const [ran, setrandomData] = useState([]);
@@ -74,7 +77,7 @@ const Product = () => {
         add_cart: "",
       };
       try {
-        const cartraw = await fetch(`https://nivsjewels.com/api/update`, {
+        const cartraw = await fetch(`https://virhanchains.nivsjewels.com/api/update`, {
           method: "POST",
           body: JSON.stringify(cartdata),
         });
@@ -135,7 +138,7 @@ const Product = () => {
                             src={product.design_image}
                             alt="not found"
                             className="img-fluid"
-                            // width={"600"}
+                          // width={"600"}
                           />
                         </div>
                       </div>

@@ -2,13 +2,16 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Loader from "../components/loader";
 const Index = () => {
+  document.title = "Virhan Chains - Home";
+
   const [isLoaded, setLoad] = useState(true);
   const [ran, setrandomData] = useState([]);
+  const [latest, setLatestData] = useState([]);
   useEffect(() => {
     // Simulate an API call
     setTimeout(() => {
       setLoad(false);
-    }, 2000);
+    }, 1000);
   }, []);
 
   useEffect(() => {
@@ -28,6 +31,25 @@ const Index = () => {
     };
 
     fetchData();
+  }, []);
+
+  useEffect(() => {
+    const latestData = async () => {
+      try {
+        const rawdata = await fetch(
+          `https://utsarvajewels.com/api/crud?get_latest_eight`
+        );
+        const jsondata = await rawdata.json();
+
+        if (jsondata) {
+          setLatestData(jsondata.data);
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    latestData();
   }, []);
 
   if (isLoaded) {
@@ -51,9 +73,10 @@ const Index = () => {
                   data-wow-delay="0.5s"
                   data-wow-duration="0.5s"
                 >
-                  Our fashion jewellery is inspired by minimalism, focused on
+                  {/* Our fashion jewellery is inspired by minimalism, focused on
                   minimal simplicity, perfect for everyday wear and cherished
-                  for years.
+                  for years. */}
+                  We invite you to explore our collections and experience the exceptional quality and service 
                 </p>
               </div>
             </div>
@@ -472,325 +495,49 @@ const Index = () => {
             </div>
           </div>
           <div className="row g-4 justify-content-center">
-            <div className="col-xl-3 col-lg-4 col-sm-6">
-              <div className="ur-product-card position-relative card-sm-small">
-                <span className="">50%</span>
-                <div className="feature-image d-flex align-items-cneter justify-content-center light-bg position-relative">
-                  <a href="#!">
-                    <img
-                      src="assets/images/products/product-7.png"
-                      alt="rings"
-                      className="img-fluid"
-                    />
-                  </a>
-                  <div className="product-overlay position-absolute">
-                    <div className="product-btns d-flex align-items-center justify-content-between">
-                      <a href="#!">
-                        <i className="fa-regular fa-heart" />
-                      </a>
-                      <a href="#!">
-                        <i className="fa-solid fa-basket-shopping" />
-                      </a>
-                      <a href="#product_quickview" data-bs-toggle="modal">
-                        <i className="fa-regular fa-eye" />
-                      </a>
+            {latest.map((l, index) => (
+              < div className="col-xl-3 col-lg-4 col-sm-6">
+                <div className="ur-product-card position-relative card-sm-small">
+                  <div className="feature-image d-flex align-items-cneter justify-content-center light-bg position-relative">
+                    <Link to={`/product/${l.design_no}`}>
+                      <img
+                        src={l.design_image}
+                        alt={l.design_no}
+                        className="img-fluid"
+                      />
+                    </Link>
+                    <div className="product-overlay position-absolute">
+                      <div className="product-btns d-flex align-items-center justify-content-between">
+                        <a href="#!">
+                          <i className="fa-regular fa-heart" />
+                        </a>
+                        <a href="#!">
+                          <i className="fa-solid fa-basket-shopping" />
+                        </a>
+                        <Link to={`/product/${l.design_no}`} >
+                          <i className="fa-regular fa-eye" />
+                        </Link>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="mt-4">
-                  <a href="#!" className="secondary-text-color text-uppercase">
-                    Necklaces
-                  </a>
-                  <a href="#!">
-                    <h5 className="my-2 fw-medium product-title">
-                      Hitmor 24k Neaklaces
-                    </h5>
-                  </a>
-                  <span className="primary-text-color fs-sm fw-medium">
-                    $250.00
-                  </span>
-                  <del className="ms-3 fw-light text-color">$350</del>
-                </div>
-              </div>
-            </div>
-            <div className="col-xl-3 col-lg-4 col-sm-6">
-              <div className="ur-product-card position-relative card-sm-small">
-                <div className="feature-image d-flex align-items-cneter justify-content-center light-bg position-relative">
-                  <a href="#">
-                    <img
-                      src="assets/images/products/product-6.png"
-                      alt="rings"
-                      className="img-fluid"
-                    />
-                  </a>
-                  <div className="product-overlay position-absolute">
-                    <div className="product-btns d-flex align-items-center justify-content-between">
-                      <a href="#!">
-                        <i className="fa-regular fa-heart" />
-                      </a>
-                      <a href="#!">
-                        <i className="fa-solid fa-basket-shopping" />
-                      </a>
-                      <a href="#product_quickview" data-bs-toggle="modal">
-                        <i className="fa-regular fa-eye" />
-                      </a>
-                    </div>
+                  <div className="mt-4 text-center">
+                    <a href="#!" className="secondary-text-color text-uppercase">
+                      {l.design_no}
+                    </a><br></br>
+                    {/* <a href="#!">
+                      <h5 className="my-2 fw-medium product-title">
+                        Hitmor 24k Neaklaces
+                      </h5>
+                    </a> */}
+                    <span className="primary-text-color fs-sm fw-medium">
+                      Weight : {l.design_weight}
+                    </span>
+                    {/* <del className="ms-3 fw-light text-color">$350</del> */}
                   </div>
                 </div>
-                <div className="mt-4">
-                  <a href="#!" className="secondary-text-color text-uppercase">
-                    Gold
-                  </a>
-                  <a href="#!">
-                    <h5 className="my-2 fw-medium product-title">
-                      Amazing Gold Plated
-                    </h5>
-                  </a>
-                  <span className="primary-text-color fs-sm fw-medium">
-                    $200.00
-                  </span>
-                  <del className="ms-3 fw-light text-color">$300</del>
-                </div>
               </div>
-            </div>
-            <div className="col-xl-3 col-lg-4 col-sm-6">
-              <div className="ur-product-card position-relative card-sm-small">
-                <span className="">50%</span>
-                <div className="feature-image d-flex align-items-cneter justify-content-center light-bg position-relative">
-                  <a href="#">
-                    <img
-                      src="assets/images/products/product-4.png"
-                      alt="rings"
-                      className="img-fluid"
-                    />
-                  </a>
-                  <div className="product-overlay position-absolute">
-                    <div className="product-btns d-flex align-items-center justify-content-between">
-                      <a href="#!">
-                        <i className="fa-regular fa-heart" />
-                      </a>
-                      <a href="#!">
-                        <i className="fa-solid fa-basket-shopping" />
-                      </a>
-                      <a href="#product_quickview" data-bs-toggle="modal">
-                        <i className="fa-regular fa-eye" />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div className="mt-4">
-                  <a href="#!" className="secondary-text-color text-uppercase">
-                    Rings
-                  </a>
-                  <a href="#!">
-                    <h5 className="my-2 fw-medium product-title">
-                      Hoten Diamond Ring
-                    </h5>
-                  </a>
-                  <span className="primary-text-color fs-sm fw-medium">
-                    $150.00
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div className="col-xl-3 col-lg-4 col-sm-6">
-              <div className="ur-product-card position-relative card-sm-small">
-                <div className="feature-image d-flex align-items-cneter justify-content-center light-bg position-relative">
-                  <a href="#!">
-                    <img
-                      src="assets/images/products/product-3.png"
-                      alt="rings"
-                      className="img-fluid"
-                    />
-                  </a>
-                  <div className="product-overlay position-absolute">
-                    <div className="product-btns d-flex align-items-center justify-content-between">
-                      <a href="#!">
-                        <i className="fa-regular fa-heart" />
-                      </a>
-                      <a href="#!">
-                        <i className="fa-solid fa-basket-shopping" />
-                      </a>
-                      <a href="#product_quickview" data-bs-toggle="modal">
-                        <i className="fa-regular fa-eye" />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div className="mt-4">
-                  <a href="#!" className="secondary-text-color text-uppercase">
-                    Earrings
-                  </a>
-                  <a href="#!">
-                    <h5 className="my-2 fw-medium product-title">
-                      Green Ball Earrings
-                    </h5>
-                  </a>
-                  <span className="primary-text-color fs-sm fw-medium">
-                    $550.00
-                  </span>
-                  <del className="ms-3 fw-light text-color">$650</del>
-                </div>
-              </div>
-            </div>
-            <div className="col-xl-3 col-lg-4 col-sm-6">
-              <div className="ur-product-card position-relative card-sm-small">
-                <div className="feature-image d-flex align-items-cneter justify-content-center light-bg position-relative">
-                  <a href="#!">
-                    <img
-                      src="assets/images/products/product-2.png"
-                      alt="rings"
-                      className="img-fluid"
-                    />
-                  </a>
-                  <div className="product-overlay position-absolute">
-                    <div className="product-btns d-flex align-items-center justify-content-between">
-                      <a href="#!">
-                        <i className="fa-regular fa-heart" />
-                      </a>
-                      <a href="#!">
-                        <i className="fa-solid fa-basket-shopping" />
-                      </a>
-                      <a href="#product_quickview" data-bs-toggle="modal">
-                        <i className="fa-regular fa-eye" />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div className="mt-4">
-                  <a href="#!" className="secondary-text-color text-uppercase">
-                    Gold
-                  </a>
-                  <a href="#!">
-                    <h5 className="my-2 fw-medium product-title">
-                      Witen Gold Earring
-                    </h5>
-                  </a>
-                  <span className="primary-text-color fs-sm fw-medium">
-                    $250.00
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div className="col-xl-3 col-lg-4 col-sm-6">
-              <div className="ur-product-card position-relative card-sm-small">
-                <div className="feature-image d-flex align-items-cneter justify-content-center light-bg position-relative">
-                  <a href="#!">
-                    <img
-                      src="assets/images/products/product-1.png"
-                      alt="rings"
-                      className="img-fluid"
-                    />
-                  </a>
-                  <div className="product-overlay position-absolute">
-                    <div className="product-btns d-flex align-items-center justify-content-between">
-                      <a href="#!">
-                        <i className="fa-regular fa-heart" />
-                      </a>
-                      <a href="#!">
-                        <i className="fa-solid fa-basket-shopping" />
-                      </a>
-                      <a href="#product_quickview" data-bs-toggle="modal">
-                        <i className="fa-regular fa-eye" />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div className="mt-4">
-                  <a href="#!" className="secondary-text-color text-uppercase">
-                    Diamond
-                  </a>
-                  <a href="#!">
-                    <h5 className="my-2 fw-medium product-title">
-                      Blue Diamond Rings
-                    </h5>
-                  </a>
-                  <span className="primary-text-color fs-sm fw-medium">
-                    $50.00
-                  </span>
-                  <del className="ms-3 fw-light text-color">$75</del>
-                </div>
-              </div>
-            </div>
-            <div className="col-xl-3 col-lg-4 col-sm-6">
-              <div className="ur-product-card position-relative card-sm-small">
-                <div className="feature-image d-flex align-items-cneter justify-content-center light-bg position-relative">
-                  <a href="#!">
-                    <img
-                      src="assets/images/products/product-7.png"
-                      alt="rings"
-                      className="img-fluid"
-                    />
-                  </a>
-                  <div className="product-overlay position-absolute">
-                    <div className="product-btns d-flex align-items-center justify-content-between">
-                      <a href="#!">
-                        <i className="fa-regular fa-heart" />
-                      </a>
-                      <a href="#!">
-                        <i className="fa-solid fa-basket-shopping" />
-                      </a>
-                      <a href="#product_quickview" data-bs-toggle="modal">
-                        <i className="fa-regular fa-eye" />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div className="mt-4">
-                  <a href="#!" className="secondary-text-color text-uppercase">
-                    Rings
-                  </a>
-                  <a href="#!">
-                    <h5 className="my-2 fw-medium product-title">
-                      Hitmor 24k Neaklaces
-                    </h5>
-                  </a>
-                  <span className="primary-text-color fs-sm fw-medium">
-                    $250.00
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div className="col-xl-3 col-lg-4 col-sm-6">
-              <div className="ur-product-card position-relative card-sm-small">
-                <span className="">50%</span>
-                <div className="feature-image d-flex align-items-cneter justify-content-center light-bg position-relative">
-                  <a href="#!">
-                    <img
-                      src="assets/images/products/product-6.png"
-                      alt="rings"
-                      className="img-fluid"
-                    />
-                  </a>
-                  <div className="product-overlay position-absolute">
-                    <div className="product-btns d-flex align-items-center justify-content-between">
-                      <a href="#!">
-                        <i className="fa-regular fa-heart" />
-                      </a>
-                      <a href="#!">
-                        <i className="fa-solid fa-basket-shopping" />
-                      </a>
-                      <a href="#product_quickview" data-bs-toggle="modal">
-                        <i className="fa-regular fa-eye" />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div className="mt-4">
-                  <a href="#!" className="secondary-text-color text-uppercase">
-                    Earrings
-                  </a>
-                  <a href="#!">
-                    <h5 className="my-2 fw-medium product-title">
-                      Witen Gold Earring
-                    </h5>
-                  </a>
-                  <span className="primary-text-color fs-sm fw-medium">
-                    $256.00
-                  </span>
-                </div>
-              </div>
-            </div>
+            ))}
+
           </div>
           <div className="text-center mt-60">
             <a href="#!" className="template-btn primary-btn">
@@ -798,10 +545,10 @@ const Index = () => {
             </a>
           </div>
         </div>
-      </section>
+      </section >
       {/*latest arrival end*/}
 
-      <span className="theme-devider" />
+      < span className="theme-devider" />
     </>
   );
 };

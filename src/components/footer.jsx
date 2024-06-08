@@ -1,6 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Footer() {
+  const [data, setdata] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const categoryResponse = await fetch(
+          "https://utsarvajewels.com/api/crud?getRandomFiveCategory"
+        );
+        const categoryData = await categoryResponse.json();
+
+        setdata(categoryData);
+        //   setSubCategories(categoryData.data.subcat);
+
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+  console.log(data);
   return (
     <>
       {/*footer section start*/}
@@ -9,7 +31,7 @@ function Footer() {
           <div className="row">
             <div className="col-12">
               <div className="row g-4">
-                <div className="col-xxl-4 col-xl-5 col-lg-3 col-md-6">
+                <div className="col-lg-3 col-sm-12">
                   <div className="ur3-footer-widget">
                     <span className="text-white fw-medium fs-sm d-block mt-40">
                       Quick Contact
@@ -35,107 +57,28 @@ function Footer() {
                     </div>
                   </div>
                 </div>
-                <div className="col-xxl-3 col-xl-2 col-lg-3 ps-lg-5 ps-xl-0 col-md-6">
-                  <div className="ur3-footer-widget">
-                    <h4 className="text-white widget-title mb-40 fw-normal">
-                      Useful Links
-                    </h4>
-                    <ul className="ur3-footer-links">
-                      <li>
-                        <a href="#">Collections</a>
-                      </li>
-                      <li>
-                        <a href="#">Deals</a>
-                      </li>
-                      <li>
-                        <a href="#">Necklaces</a>
-                      </li>
-                      <li>
-                        <a href="#">Bestsellers</a>
-                      </li>
-                      <li>
-                        <a href="#">Combos</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="col-xxl-2 col-xl-3 ps-xl-5 ps-xxl-0 col-lg-3 col-md-6">
-                  <div className="ur3-footer-widget">
-                    <h4 className="text-white widget-title mb-40 fw-normal">
-                      Useful Links
-                    </h4>
-                    <ul className="ur3-footer-links">
-                      <li>
-                        <a href="#">Collections</a>
-                      </li>
-                      <li>
-                        <a href="#">Deals</a>
-                      </li>
-                      <li>
-                        <a href="#">Necklaces</a>
-                      </li>
-                      <li>
-                        <a href="#">Bestsellers</a>
-                      </li>
-                      <li>
-                        <a href="#">Combos</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="col-xxl-2 offset-xxl-1 col-xl-2 col-lg-3 col-md-6">
-                  <div className="ur3-footer-widget">
-                    <h4 className="text-white widget-title mb-40 fw-normal">
-                      Useful Links
-                    </h4>
-                    <ul className="ur3-footer-links">
-                      <li>
-                        <a href="#">Collections</a>
-                      </li>
-                      <li>
-                        <a href="#">Deals</a>
-                      </li>
-                      <li>
-                        <a href="#">Necklaces</a>
-                      </li>
-                      <li>
-                        <a href="#">Bestsellers</a>
-                      </li>
-                      <li>
-                        <a href="#">Combos</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div className="ur3-newsletter-box mt-60">
-                <div className="row g-3 g-sm-4 align-items-center">
-                  <div className="col-xl-5 col-lg-6">
-                    <div className="ur3-newsletter-content">
-                      <h3 className="mb-4 text-white">Our Newsletter</h3>
-                      <p className="mb-0 fw-light text-color">
-                        Pretium etiam imperdiet interdum porttitor urna eget
-                        inceptos felis ultricies libero
-                      </p>
+                {data.map((d, index) => (
+                  <div className="col-lg-3 col-sm-12" key={index}>
+                    <div className="row">
+                      <div className="col-6">
+                        <div className="ur3-footer-widget">
+                          <h4 className="text-white widget-title mb-40 fw-normal">
+                            {d.catName}
+                          </h4>
+                          <ul className="ur3-footer-links">
+                            {d.subcat.map((s, indexs) => (
+                              < li key={indexs}>
+                                <Link to={`shop/${s.CatName}/${s.SubCatName}/1/0/0/0/0`}>{s.SubCatName}</Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div className="col-xl-7 col-lg-6 col-md-8">
-                    <form className="ur3-newsletter-form d-flex align-items-center gap-4">
-                      <input
-                        type="text"
-                        placeholder="Enter your email"
-                        className="theme-input"
-                      />
-                      <button
-                        type="submit"
-                        className="template-btn secondary-btn flex-shrink-0"
-                      >
-                        <span>Subscribe Now</span>
-                      </button>
-                    </form>
-                  </div>
-                </div>
+                ))}
               </div>
+
               <div className="ur3-footer-copyright">
                 <div className="row align-items-center g-3">
                   <div className="col-md-6">
