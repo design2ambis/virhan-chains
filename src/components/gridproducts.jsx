@@ -90,7 +90,7 @@ const Gridproducts = (props) => {
         add_cart: "",
       };
       try {
-        const cartraw = await fetch(`https://virhanchains.nivsjewels.com/api/update`, {
+        const cartraw = await fetch(`https://virhanjewels.nivsjewels.com/api/update`, {
           method: "POST",
           body: JSON.stringify(cartdata),
         });
@@ -122,7 +122,7 @@ const Gridproducts = (props) => {
     };
     if (token && token != null && token != "") {
       try {
-        const req = await fetch(`https://virhanchains.nivsjewels.com/api/update`, {
+        const req = await fetch(`https://virhanjewels.nivsjewels.com/api/update`, {
           method: "POST",
           body: JSON.stringify(postdata),
         });
@@ -177,13 +177,13 @@ const Gridproducts = (props) => {
                                 {0 == props.weight ? (
                                   <Link
                                     style={{ background: "#f0f0f0" }}
-                                    to={`/shop/${props.cat}/${props.subcat}/${currentpage}/0/${props.type}/${props.collection}/${props.manu}`}
+                                    to={`/shop/${props.cat}/${props.subcat}/1/0/${props.type}/${props.collection}/${props.manu}`}
                                   >
                                     0-100{" "}
                                   </Link>
                                 ) : (
                                   <Link
-                                    to={`/shop/${props.cat}/${props.subcat}/${currentpage}/0/${props.type}/${props.collection}/${props.manu}`}
+                                    to={`/shop/${props.cat}/${props.subcat}/1/0/${props.type}/${props.collection}/${props.manu}`}
                                   >
                                     0-100{" "}
                                   </Link>
@@ -228,13 +228,13 @@ const Gridproducts = (props) => {
                                 {0 == props.type ? (
                                   <Link
                                     style={{ background: "#f0f0f0" }}
-                                    to={`/shop/${props.cat}/${props.subcat}/${currentpage}/${props.weight}/0/${props.collection}/${props.manu}`}
+                                    to={`/shop/${props.cat}/${props.subcat}/1/${props.weight}/0/${props.collection}/${props.manu}`}
                                   >
                                     All Design{" "}
                                   </Link>
                                 ) : (
                                   <Link
-                                    to={`/shop/${props.cat}/${props.subcat}/${currentpage}/${props.weight}/0/${props.collection}/${props.manu}`}
+                                    to={`/shop/${props.cat}/${props.subcat}/1/${props.weight}/0/${props.collection}/${props.manu}`}
                                   >
                                     All Design{" "}
                                   </Link>
@@ -248,13 +248,13 @@ const Gridproducts = (props) => {
                                 {1 == props.type ? (
                                   <Link
                                     style={{ background: "#f0f0f0" }}
-                                    to={`/shop/${props.cat}/${props.subcat}/${currentpage}/${props.weight}/1/${props.collection}/${props.manu}`}
+                                    to={`/shop/${props.cat}/${props.subcat}/1/${props.weight}/1/${props.collection}/${props.manu}`}
                                   >
                                     Plain{" "}
                                   </Link>
                                 ) : (
                                   <Link
-                                    to={`/shop/${props.cat}/${props.subcat}/${currentpage}/${props.weight}/1/${props.collection}/${props.manu}`}
+                                    to={`/shop/${props.cat}/${props.subcat}/1/${props.weight}/1/${props.collection}/${props.manu}`}
                                   >
                                     Plain
                                   </Link>
@@ -268,13 +268,13 @@ const Gridproducts = (props) => {
                                 {2 == props.type ? (
                                   <Link
                                     style={{ background: "#f0f0f0" }}
-                                    to={`/shop/${props.cat}/${props.subcat}/${currentpage}/${props.weight}/2/${props.collection}/${props.manu}`}
+                                    to={`/shop/${props.cat}/${props.subcat}/1/${props.weight}/2/${props.collection}/${props.manu}`}
                                   >
                                     Stone{" "}
                                   </Link>
                                 ) : (
                                   <Link
-                                    to={`/shop/${props.cat}/${props.subcat}/${currentpage}/${props.weight}/2/${props.collection}/${props.manu}`}
+                                    to={`/shop/${props.cat}/${props.subcat}/1/${props.weight}/2/${props.collection}/${props.manu}`}
                                   >
                                     Stone{" "}
                                   </Link>
@@ -296,13 +296,13 @@ const Gridproducts = (props) => {
                                 {0 == props.type ? (
                                   <Link
                                     style={{ background: "#f0f0f0" }}
-                                    to={`/shop/${props.cat}/${props.subcat}/${currentpage}/${props.weight}/0/${props.collection}/0`}
+                                    to={`/shop/${props.cat}/${props.subcat}/1/${props.weight}/0/${props.collection}/0`}
                                   >
                                     All Design{" "}
                                   </Link>
                                 ) : (
                                   <Link
-                                    to={`/shop/${props.cat}/${props.subcat}/${currentpage}/${props.weight}/0/${props.collection}/0`}
+                                    to={`/shop/${props.cat}/${props.subcat}/1/${props.weight}/0/${props.collection}/0`}
                                   >
                                     All Design{" "}
                                   </Link>

@@ -53,7 +53,7 @@ const Register = () => {
         // If validation passes, submit the form data
         setLoad(true);
         try {
-            const response = await fetch("https://virhanchains.nivsjewels.com/api/register", {
+            const response = await fetch("https://virhanjewels.nivsjewels.com/api/register", {
                 method: "POST",
                 body: JSON.stringify(formData),
             });

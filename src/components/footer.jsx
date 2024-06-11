@@ -33,13 +33,18 @@ function Footer() {
               <div className="row g-4">
                 <div className="col-lg-3 col-sm-12">
                   <div className="ur3-footer-widget">
-                    <span className="text-white fw-medium fs-sm d-block mt-40">
+                    <h4 className="text-white fw-medium d-block mt-40">
                       Quick Contact
-                    </span>
-                    <a href="tel:+91 91500 16195">
-                      <h3 className="text-white fw-normal mt-1">
-                        +91 91500 16195
-                      </h3>
+                    </h4>
+                    <a href="tel:+919150016195">
+                      <h5 className="text-white fw-normal mt-1">
+                       +91 91500 16195
+                      </h5>
+                    </a>
+                    <a href="mail:info@virhanjewels.com">
+                      <h5 className="text-white fw-normal mt-1">
+                       info@virhanjewels.com
+                      </h5>
                     </a>
                     <div className="ur3-footer-social mt-32">
                       <a href="#">
@@ -63,12 +68,12 @@ function Footer() {
                       <div className="col-6">
                         <div className="ur3-footer-widget">
                           <h4 className="text-white widget-title mb-40 fw-normal">
-                            {d.catName}
+                            {d.catName.toUpperCase()}
                           </h4>
                           <ul className="ur3-footer-links">
                             {d.subcat.map((s, indexs) => (
                               < li key={indexs}>
-                                <Link to={`shop/${s.CatName}/${s.SubCatName}/1/0/0/0/0`}>{s.SubCatName}</Link>
+                                <Link to={`shop/${s.CatName}/${s.SubCatName}/1/0/0/0/0`}>{s.SubCatName.toUpperCase()}</Link>
                               </li>
                             ))}
                           </ul>

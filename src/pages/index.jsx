@@ -1,6 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Loader from "../components/loader";
+
+//asset import
+
+import earring from "../../assets/images/products/earrings.jpg";
+import neaklaces from "../../assets/images/products/neaklaces.jpg";
+import rings from "../../assets/images/products/rings.jpg";
+import bracelets from "../../assets/images/products/bracelets.jpg";
+import shape1 from "../../assets/images/shapes/shape-1.jpg";
+import chainlg from "../../assets/images/products/chain-lg.jpg";
+import product2 from "../../assets/images/products/product-2.png";
+import ringLg2 from "../../assets/images/products/ring-lg-2.jpg";
+import product3 from "../../assets/images/products/product-3.png";
+import product4 from "../../assets/images/products/product-4.png";
+import product6 from "../../assets/images/products/product-6.png";
+import ringLg from "../../assets/images/products/ring-lg.jpg";
+import necklacelg from "../../assets/images/products/neaklace-lg.jpg"
+
+
 const Index = () => {
   document.title = "Virhan Jewels - Home";
 
@@ -84,43 +102,43 @@ const Index = () => {
           <div className="row">
             <div className="col-md-3 col-sm-6 col-xs-12 text-center ">
               <img
-                src="assets/images/products/earrings.jpg"
+                src={earring}
                 alt="earrings"
                 className="img-fluid"
               />
-              <a href="#!" className="text-center text-dark mt-3">
+              <Link to={`/shop/women/stud/1/0/0/0/0`} className="text-center text-dark mt-3">
                 <span>Earrings</span>
-              </a>
+              </Link>
             </div>
             <div className="col-md-3 col-sm-6 col-xs-12 text-center ">
               <img
-                src="assets/images/products/neaklaces.jpg"
+                src={neaklaces}
                 alt="neaklaces"
                 className="img-fluid"
               />
-              <a href="#!" className="text-center text-dark mt-3">
+              <Link to={`/shop/women/necklace/1/0/0/0/0`} className="text-center text-dark mt-3">
                 <span>Neaklaces</span>
-              </a>
+              </Link>
             </div>
             <div className="col-md-3 col-sm-6 col-xs-12 text-center ">
               <img
-                src="assets/images/products/rings.jpg"
+                src={rings}
                 alt="rings"
                 className="img-fluid"
               />
-              <a href="#" className="text-center text-dark mt-3">
+              <Link to={`/shop/women/ring/1/0/0/0/0`} className="text-center text-dark mt-3">
                 <span>Rings</span>
-              </a>
+              </Link>
             </div>
             <div className="col-md-3 col-sm-6 col-xs-12 text-center ">
               <img
-                src="assets/images/products/bracelets.jpg"
+                src={bracelets}
                 alt="bracelets"
                 className="img-fluid"
               />
-              <a href="#!" className="text-center text-dark mt-3">
+              <Link to={`/shop/women/bracelet/1/0/0/0/0`} className="text-center text-dark mt-3">
                 <span>Bracelets</span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -161,13 +179,13 @@ const Index = () => {
               <div className="feature-image-wrapper">
                 <div className="cta-image position-relative">
                   <img
-                    src="assets/images/products/rings.jpg"
+                    src={rings}
                     alt="rings"
                     className="img-fluid feature-image wow fadeInUp"
                     data-wow-duration="0.5s"
                   />
                   <img
-                    src="assets/images/shapes/shape-1.jpg"
+                    src={shape1}
                     alt="shape"
                     className="position-absolute shape-image d-none d-xl-block wow fadeInUp"
                     data-wow-delay="0.3s"
@@ -183,7 +201,7 @@ const Index = () => {
                 >
                   Antique
                   <br />
-                  Diamond Necklaces
+                  Necklaces
                 </h2>
                 <h6
                   className="mb-50 fw-light text-color wow fadeInUp"
@@ -195,14 +213,14 @@ const Index = () => {
                   quo voluptas earum reiciendis molestias quam, dolorem
                   laudantium molestiae
                 </h6>
-                <a
-                  href="#"
+                <Link
+                  to={`/shop/women/necklace/1/0/0/0/0`}
                   className="template-btn primary-btn wow fadeInUp"
                   data-wow-delay="0.5s"
                   data-wow-duration="0.5s"
                 >
                   <span>Discover More</span>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -221,7 +239,7 @@ const Index = () => {
           </div>
           <div className="row feature-product-slider slider-spacing">
             {ran.map((r, index) => (
-              <div className="ur-product-card col-md-3 col-sm-12" key={index}>
+              <div className="ur-product-card col-md-3 col-sm-6 col-6" key={index}>
                 <div className="feature-image d-flex align-items-cneter justify-content-center light-bg position-relative">
                   <Link to={`/product/${r.design_no}`}>
                     <img
@@ -303,7 +321,7 @@ const Index = () => {
                     <div className="col-xl-7 col-lg-7 col-md-6">
                       <div className="banner-image ps-xl-5 mt-5 mt-xl-0">
                         <img
-                          src="assets/images/products/chain-lg.jpg"
+                          src={chainlg}
                           alt="chain"
                           className="img-fluid"
                         />
@@ -317,7 +335,7 @@ const Index = () => {
                         <div className="feature-image d-flex align-items-cneter justify-content-center">
                           <a href="#!">
                             <img
-                              src="assets/images/products/product-6.png"
+                              src={product6}
                               alt="rings"
                               className="img-fluid"
                             />
@@ -330,14 +348,7 @@ const Index = () => {
                           >
                             Necklaces
                           </a>
-                          <a href="#!">
-                            <h5 className="my-2 fw-medium product-title">
-                              Hitmor 24k Neaklaces
-                            </h5>
-                          </a>
-                          <span className="primary-text-color fs-sm fw-medium">
-                            $250.00
-                          </span>
+
                         </div>
                       </div>
                     </div>
@@ -348,7 +359,7 @@ const Index = () => {
                     <div className="col-xl-7 col-lg-7 col-md-6">
                       <div className="banner-image ps-xl-5 mt-5 mt-xl-0">
                         <img
-                          src="assets/images/products/neaklace-lg.jpg"
+                          src={necklacelg}
                           alt="chain"
                           className="img-fluid"
                         />
@@ -362,7 +373,7 @@ const Index = () => {
                         <div className="feature-image d-flex align-items-cneter justify-content-center">
                           <a href="#!">
                             <img
-                              src="assets/images/products/product-4.png"
+                              src={product4}
                               alt="rings"
                               className="img-fluid"
                             />
@@ -375,14 +386,7 @@ const Index = () => {
                           >
                             Bracelates
                           </a>
-                          <a href="#!">
-                            <h5 className="my-2 fw-medium product-title">
-                              Green Diamond Earring
-                            </h5>
-                          </a>
-                          <span className="primary-text-color fs-sm fw-medium">
-                            $250.00
-                          </span>
+
                         </div>
                       </div>
                     </div>
@@ -393,7 +397,7 @@ const Index = () => {
                     <div className="col-xl-7 col-lg-7 col-md-6">
                       <div className="banner-image ps-xl-5 mt-5 mt-xl-0">
                         <img
-                          src="assets/images/products/ring-lg.jpg"
+                          src={ringLg}
                           alt="chain"
                           className="img-fluid"
                         />
@@ -407,7 +411,7 @@ const Index = () => {
                         <div className="feature-image d-flex align-items-cneter justify-content-center">
                           <a href="#!">
                             <img
-                              src="assets/images/products/product-3.png"
+                              src={product3}
                               alt="rings"
                               className="img-fluid"
                             />
@@ -420,14 +424,7 @@ const Index = () => {
                           >
                             Earrings
                           </a>
-                          <a href="#!">
-                            <h5 className="my-2 fw-medium product-title">
-                              Blue Cool Earring
-                            </h5>
-                          </a>
-                          <span className="primary-text-color fs-sm fw-medium">
-                            $250.00
-                          </span>
+
                         </div>
                       </div>
                     </div>
@@ -438,7 +435,7 @@ const Index = () => {
                     <div className="col-xl-7 col-lg-7 col-md-6">
                       <div className="banner-image ps-xl-5 mt-5 mt-xl-0">
                         <img
-                          src="assets/images/products/ring-lg-2.jpg"
+                          src={ringLg2}
                           alt="chain"
                           className="img-fluid"
                         />
@@ -452,7 +449,7 @@ const Index = () => {
                         <div className="feature-image d-flex align-items-cneter justify-content-center">
                           <a href="#!">
                             <img
-                              src="assets/images/products/product-2.png"
+                              src={product2}
                               alt="rings"
                               className="img-fluid"
                             />
@@ -465,14 +462,7 @@ const Index = () => {
                           >
                             Rings
                           </a>
-                          <a href="#!">
-                            <h5 className="my-2 fw-medium product-title">
-                              Amazing Gold Plated
-                            </h5>
-                          </a>
-                          <span className="primary-text-color fs-sm fw-medium">
-                            $250.00
-                          </span>
+
                         </div>
                       </div>
                     </div>
@@ -496,7 +486,7 @@ const Index = () => {
           </div>
           <div className="row g-4 justify-content-center">
             {latest.map((l, index) => (
-              < div className="col-xl-3 col-lg-4 col-sm-6">
+              < div className="col-xl-3 col-lg-4 col-sm-6" key={index}>
                 <div className="ur-product-card position-relative card-sm-small">
                   <div className="feature-image d-flex align-items-cneter justify-content-center light-bg position-relative">
                     <Link to={`/product/${l.design_no}`}>

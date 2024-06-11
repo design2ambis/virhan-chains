@@ -25,7 +25,7 @@ const Wishlist = () => {
   const fetchData = async () => {
     try {
       const wish = await fetch(
-        "https://virhanchains.nivsjewels.com/api/select?get_wishlist&token=" + username
+        "https://virhanjewels.nivsjewels.com/api/select?get_wishlist&token=" + username
       );
       const fetchdata = await wish.json();
       if (fetchdata.status === 200) {
@@ -47,7 +47,7 @@ const Wishlist = () => {
   const Removewishlist = async (id) => {
     try {
       const wish = await fetch(
-        `https://virhanchains.nivsjewels.com/api/update?removeWishlist&token=${username}&id=${id}`
+        `https://virhanjewels.nivsjewels.com/api/update?removeWishlist&token=${username}&id=${id}`
       );
       const fetchdata = await wish.json();
       if (fetchdata.status === true) {
@@ -72,7 +72,7 @@ const Wishlist = () => {
         add_cart: "",
       };
       try {
-        const cartraw = await fetch(`https://virhanchains.nivsjewels.com/api/update`, {
+        const cartraw = await fetch(`https://virhanjewels.nivsjewels.com/api/update`, {
           method: "POST",
           body: JSON.stringify(cartdata),
         });

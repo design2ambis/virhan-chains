@@ -22,7 +22,7 @@ const Cart = () => {
     const fetchData = async () => {
         try {
             const cartResponse = await fetch(
-                "https://virhanchains.nivsjewels.com/api/select?get_cart&token=" + username
+                "https://virhanjewels.nivsjewels.com/api/select?get_cart&token=" + username
             );
             const cartData = await cartResponse.json();
             if (cartData.status === 200) {
@@ -46,7 +46,7 @@ const Cart = () => {
         try {
             setLoad(true);
             const cartResponse = await fetch(
-                `https://virhanchains.nivsjewels.com/api/update?update_cart&id=${id}&qty=${qty}&type=${type}`
+                `https://virhanjewels.nivsjewels.com/api/update?update_cart&id=${id}&qty=${qty}&type=${type}`
             );
             const cartData = await cartResponse.json();
             if (cartData.update_sta === true) {

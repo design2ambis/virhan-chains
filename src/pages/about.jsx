@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Loader from '../components/loader';
 
+import imgabout from "../../assets/images/about/1.jpg";
+import imgvm from "../../assets/images/about/01.jpg";
+
 const About = () => {
   document.title = "Virhan Jewels - About";
   const [isLoaded, setLoad] = useState(true);
@@ -36,7 +39,7 @@ const About = () => {
             <div className="col-xl-5 col-lg-6">
               <div className="image-wrapper">
                 <img
-                  src="assets/images/about/1.jpg"
+                  src={imgabout}
                   alt="not found"
                   className="img-fluid"
                 />
@@ -122,7 +125,7 @@ const About = () => {
               <div className="theme-card">
                 <div className="overflow-hidden">
                   <img
-                    src="assets/images/about/01.jpg"
+                    src={imgvm}
                     alt="not found"
                     className="img-fluid"
                   />
@@ -140,15 +143,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            {/* <div className="col-xl-4 d-none d-xl-block">
-              <div className="feature-image about-mission-box">
-                <img
-                  src="assets/images/about/2.jpg"
-                  alt="not found"
-                  className="img-fluid"
-                />
-              </div>
-            </div> */}
+            
             <div className="col-xl-6 col-lg-6">
               <div>
                 <h3 className="mb-32">Our Goals</h3>
@@ -624,136 +619,7 @@ const About = () => {
       </section> */}
       {/*feedback section end*/}
 
-      {/*blog section start*/}
-      <section className="ur2-blog-section ptb-120 bg-white">
-        <div className="container">
-          <div className="row align-items-center justify-content-center">
-            <div className="col-xl-6">
-              <div className="text-center">
-                <span className="text-uppercase secondary-text-color fs-sm">
-                  Weekly Updates
-                </span>
-                <h2 className="mt-4 mb-60">Latest Blog Posts</h2>
-              </div>
-            </div>
-          </div>
-          <div className="row justify-content-center g-4">
-            <div className="col-xl-3 col-md-6">
-              <article className="ur2-blog-card mb-4 position-relative">
-                <span className="blog-author position-absolute start-0 top-0 z-1">
-                  by Austin Brown
-                </span>
-                <div className="feature-image overflow-hidden">
-                  <a href="#">
-                    <img
-                      src="assets/images/blog/blog-1.jpg"
-                      alt="feature image"
-                      className="img-fluid"
-                    />
-                  </a>
-                </div>
-                <div className="blog-content mt-32">
-                  <span className="fw-light">Sep 25, 2022 - </span>
-                  <span className="secondary-text-color fw-light">Solution</span>
-                  <a href="#">
-                    <h4 className="mb-32 mt-4 h5">
-                      Notch Elegant Accessories Best Solution
-                    </h4>
-                  </a>
-                  <a href="#" className="explore-btn fs-sm">
-                    Read More
-                  </a>
-                </div>
-              </article>
-            </div>
-            <div className="col-xl-3 col-md-6">
-              <article className="ur2-blog-card mb-4 position-relative">
-                <span className="blog-author position-absolute start-0 top-0 z-1">
-                  by Jacyka Jacy
-                </span>
-                <div className="feature-image overflow-hidden">
-                  <a href="#">
-                    <img
-                      src="assets/images/blog/blog-2.jpg"
-                      alt="feature image"
-                      className="img-fluid"
-                    />
-                  </a>
-                </div>
-                <div className="blog-content mt-32">
-                  <span className="fw-light">Oct 21, 2022 - </span>
-                  <span className="secondary-text-color fw-light">Solution</span>
-                  <a href="#">
-                    <h4 className="mb-32 mt-4 h5">
-                      How to protect your jewelry in the summer?
-                    </h4>
-                  </a>
-                  <a href="#" className="explore-btn fs-sm">
-                    Read More
-                  </a>
-                </div>
-              </article>
-            </div>
-            <div className="col-xl-3 col-md-6">
-              <article className="ur2-blog-card mb-4 position-relative">
-                <span className="blog-author position-absolute start-0 top-0 z-1">
-                  by Jennifer
-                </span>
-                <div className="feature-image overflow-hidden">
-                  <a href="#">
-                    <img
-                      src="assets/images/blog/blog-3.jpg"
-                      alt="feature image"
-                      className="img-fluid"
-                    />
-                  </a>
-                </div>
-                <div className="blog-content mt-32">
-                  <span className="fw-light">Nov 15, 2022 - </span>
-                  <span className="secondary-text-color fw-light">Solution</span>
-                  <a href="#">
-                    <h4 className="mb-32 mt-4 h5">
-                      27 Chunky Gold Rings That Will Elevate Any Outfit
-                    </h4>
-                  </a>
-                  <a href="#" className="explore-btn fs-sm">
-                    Read More
-                  </a>
-                </div>
-              </article>
-            </div>
-            <div className="col-xl-3 col-md-6">
-              <article className="ur2-blog-card mb-4 position-relative">
-                <span className="blog-author position-absolute start-0 top-0 z-1">
-                  by Devid Bro
-                </span>
-                <div className="feature-image overflow-hidden">
-                  <a href="#">
-                    <img
-                      src="assets/images/blog/blog-11.jpg"
-                      alt="feature image"
-                      className="img-fluid"
-                    />
-                  </a>
-                </div>
-                <div className="blog-content mt-32">
-                  <span className="fw-light">Feb 18, 2022 - </span>
-                  <span className="secondary-text-color fw-light">Solution</span>
-                  <a href="#">
-                    <h4 className="mb-32 mt-4 h5">
-                      27 Chunky Gold Rings That Will Elevate Any Outfit
-                    </h4>
-                  </a>
-                  <a href="#" className="explore-btn fs-sm">
-                    Read More
-                  </a>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/*blog section end*/}
+    
       {/*newsletter section start*/}
       <section className="newsletter-section light-bg ptb-120 position-relative z-1">
         <img

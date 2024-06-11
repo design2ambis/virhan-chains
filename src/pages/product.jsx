@@ -3,6 +3,8 @@ import { Link, useParams } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+import vidbanner from "../../assets/images/banner/video-banner.jpg"
+
 const Product = () => {
 
   document.title = "Virhan Jewels - Product";
@@ -39,7 +41,7 @@ const Product = () => {
     const fetchData = async () => {
       try {
         const rawdata = await fetch(
-          `https://utsarvajewels.com/api/crud?get_random_eight`
+          `https://utsarvajewels.com/api/crud?get_random_eight&count=6`
         );
         const jsondata = await rawdata.json();
 
@@ -77,7 +79,7 @@ const Product = () => {
         add_cart: "",
       };
       try {
-        const cartraw = await fetch(`https://virhanchains.nivsjewels.com/api/update`, {
+        const cartraw = await fetch(`https://virhanjewels.nivsjewels.com/api/update`, {
           method: "POST",
           body: JSON.stringify(cartdata),
         });
@@ -99,6 +101,7 @@ const Product = () => {
 
   return (
     <>
+      <ToastContainer />
       {/*breadcrumb section start*/}
       <div
         className="breadcrumb-section pt-40 pb-40"
@@ -771,7 +774,7 @@ const Product = () => {
                     </div>
                     <div className="video-content flex-shrink-0 position-relative">
                       <img
-                        src="../assets/images/banner/video-banner.jpg"
+                        src={vidbanner}
                         alt="video banner"
                         className="img-fluid"
                       />

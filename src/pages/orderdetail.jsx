@@ -37,7 +37,7 @@ const Orderdetail = () => {
             setLoad(true);
             try {
                 const proRes = await fetch(
-                    `https://virhanchains.nivsjewels.com/api/select?get_order_details&id=${orderId}&token=${username}`
+                    `https://virhanjewels.nivsjewels.com/api/select?get_order_details&id=${orderId}&token=${username}`
                 );
                 const proData = await proRes.json();
                 if (proData.status === 200) {

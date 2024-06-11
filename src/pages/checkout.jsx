@@ -51,7 +51,7 @@ const Checkout = () => {
         try {
             setLoad(true);
             const cartResponse = await fetch(
-                "https://virhanchains.nivsjewels.com/api/select?get_cart&token=" + username
+                "https://virhanjewels.nivsjewels.com/api/select?get_cart&token=" + username
             );
             const cartData = await cartResponse.json();
             if (cartData.status === 200) {
@@ -71,7 +71,7 @@ const Checkout = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('https://virhanchains.nivsjewels.com/api/insert', {
+            const response = await fetch('https://virhanjewels.nivsjewels.com/api/insert', {
                 method: 'POST',
                 body: JSON.stringify(formData)
             });

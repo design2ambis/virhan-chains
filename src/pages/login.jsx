@@ -39,7 +39,7 @@ const Login = () => {
 
         try {
 
-            const response = await fetch('https://virhanchains.nivsjewels.com/api/signin', {
+            const response = await fetch('https://virhanjewels.nivsjewels.com/api/signin', {
                 method: 'POST',
                 body: JSON.stringify({
                     email,

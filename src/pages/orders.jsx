@@ -24,7 +24,7 @@ const Orders = () => {
     try {
       setLoad(true);
       const orderResponse = await fetch(
-        `https://virhanchains.nivsjewels.com/api/select?get_order&token=${username}`
+        `https://virhanjewels.nivsjewels.com/api/select?get_order&token=${username}`
       );
       const orderData = await orderResponse.json();
       if (orderData.status === 200) {

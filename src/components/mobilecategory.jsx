@@ -42,6 +42,10 @@ const MobileCategory = () => {
         }
     })
 
+    const Closeoffcanvus = () => {
+        document.querySelector("#MobileSidebar").classList.remove("active");
+      };
+
     return (
         <>
             {categories.map((category, index) => (
@@ -51,8 +55,8 @@ const MobileCategory = () => {
                     <a href="#!">{category.name}</a>
                     <i role="button" className="fas fa-angle-down" id={`icon_${category.id}`} />
                     <ul className="submenu-wrapper" id={`subcatList_${category.id}`} key={category.id}>
-                        {category.subcat.map((sub) => (
-                            <li key={sub.id}>
+                        {category.subcat.map((sub, index) => (
+                            <li key={index}  onClick={Closeoffcanvus}>
                                 <Link className="text-dark" to={`shop/${category.cname}/${sub.sname}/1/0/0/0/0`}>{sub.name}</Link>
                             </li>
                         ))}

@@ -47,51 +47,7 @@ function Header() {
       {/*header section start*/}
       <ToastContainer />
       <header className="ur_header_section primary-bg-color header-sticky">
-        {/* <div className="topbar py-2 bottom-border d-none d-lg-block">
-          <div className="container-large">
-            <div className="row align-items-center">
-              <div className="col-xl-7 col-lg-8">
-                <div className="topbar-info d-flex align-items-center gap-48 flex-wrap">
-                  <span className="text-white item-single">
-                    <a href="tel:38122252525" className="text-white">
-                      +381 2225 25 25
-                    </a>{" "}
-                    (9AM - 6PM EST)
-                  </span>
-                  <span className="text-white item-single">
-                    FREE SHIPPING ON ALL U.S. ORDERS
-                  </span>
-                  <span className="text-white item-single">GIFT CARDS</span>
-                </div>
-              </div>
-              <div className="col-xl-5 col-lg-4">
-                <div className="d-flex align-items-center justify-content-end gap-48 topbar-info flex-wrap">
-                  <div className="ur-header-select item-single">
-                    <select>
-                      <option>EN</option>
-                      <option>BN</option>
-                      <option>CN</option>
-                    </select>
-                  </div>
-                  <div className="ur-header-select item-single">
-                    <select>
-                      <option>USD</option>
-                      <option>BDT</option>
-                      <option>CNY</option>
-                      <option>INR</option>
-                    </select>
-                  </div>
-                  <a href="#!" className="item-single text-uppercase">
-                    store
-                  </a>
-                  <a href="#" className="item-single text-uppercase">
-                    Subscribe
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> */}
+       
         <div className="header-wrapper">
           <div className="container-large">
             <div className="row align-items-center">
@@ -313,19 +269,19 @@ function Header() {
           <i className="fas fa-xmark" />
         </button>
         <ul className="mobile-nav-menu">
-          <li className="has-submenu">
+          <li className="has-submenu" onClick={Closeoffcanvus}>
             <Link to="/">Home</Link>
           </li>
-          <li>
+          <li onClick={Closeoffcanvus}>
             <Link to="/about">About</Link>
           </li>
 
           <MobileCategory />
 
-          <li>
+          <li onClick={Closeoffcanvus}>
             <Link to="/wishlist">Wishlist</Link>
           </li>
-          <li>
+          <li onClick={Closeoffcanvus}>
             <Link to="/contact">Contact</Link>
           </li>
         </ul>
