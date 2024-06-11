@@ -5,7 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const Product = () => {
 
-  document.title = "Virhan Chains - Product";
+  document.title = "Virhan Jewels - Product";
 
   const { prono } = useParams();
   const [product, setproduct] = useState([]);
@@ -14,7 +14,7 @@ const Product = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+  }, [prono]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -903,7 +903,7 @@ const Product = () => {
                       className="img-fluid"
                     />
                   </Link>
-                  <div className="product-overlay position-absolute">
+                  {/* <div className="product-overlay position-absolute">
                     <div className="product-btns d-flex align-items-center justify-content-between">
                       <a href="#!">
                         <i className="fa-regular fa-heart" />
@@ -915,15 +915,15 @@ const Product = () => {
                         <i className="fa-regular fa-eye" />
                       </a>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
-                <div className="mt-4">
+                <div className="mt-4 text-center">
                   {/* <a
-                                    href="#!"
-                                    className="secondary-text-color text-uppercase"
-                                >
-                                    Necklaces
-                                </a> */}
+                        href="#!"
+                        className="secondary-text-color text-uppercase"
+                    >
+                      Necklaces
+                  </a> */}
                   <Link to={`/product/${r.design_no}`}>
                     <h5 className="my-2 fw-medium product-title">
                       {r.design_no}

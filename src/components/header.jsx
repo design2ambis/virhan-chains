@@ -2,7 +2,7 @@ import { React, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Category from "./categoryfetch";
 import MobileCategory from "./mobilecategory";
-import Logo from "../../assets/Virhan-Chains.svg";
+import Logo from "../../assets/Virhan.svg";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 

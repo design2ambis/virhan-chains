@@ -7,11 +7,11 @@ import swal from 'sweetalert';
 
 const Register = () => {
 
-    document.title = "Virhan Chains - Register";
+    document.title = "Virhan Jewels - Register";
 
     const [isLoaded, setLoad] = useState(false);
 
-    document.title = "Virhan Chains - Register";
+    document.title = "Virhan Jewels - Register";
 
     const [formData, setFormData] = useState({
         customerName: "",

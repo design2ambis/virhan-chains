@@ -83,7 +83,7 @@ function Footer() {
                 <div className="row align-items-center g-3">
                   <div className="col-md-6">
                     <p className="mb-0 text-white">
-                      © 2022 Virhan Chains Powered by{" "}
+                      © 2022 Virhan Jewels Powered by{" "}
                       <a href="http://nivsjewels.com" target="_blank">
                         Nivsjewels
                       </a>

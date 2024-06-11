@@ -6,7 +6,7 @@ import swal from 'sweetalert';
 
 const Login = () => {
 
-    document.title = "Virhan Chains - Login";
+    document.title = "Virhan Jewels - Login";
 
     const { message } = useParams();
 

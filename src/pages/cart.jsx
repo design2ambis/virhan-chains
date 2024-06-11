@@ -4,7 +4,7 @@ import Loader from '../components/loader';
 
 const Cart = () => {
 
-    document.title = "Virhan Chains - Cart";
+    document.title = "Virhan Jewels - Cart";
 
     const [isLoaded, setLoad] = useState(true);
     const [cart, setCart] = useState([]);

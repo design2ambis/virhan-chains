@@ -5,7 +5,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Wishlist = () => {
-  document.title = "Virhan Chains - Wishlist";
+  document.title = "Virhan Jewels - Wishlist";
 
   const [isLoaded, setLoad] = useState(true);
   const [wishlist, setWishlist] = useState([]);

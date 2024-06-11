@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Loader from "../components/loader";
 
 const Orders = () => {
-  document.title = "Virhan Chains - Orders";
+  document.title = "Virhan Jewels - Orders";
 
   const [isLoaded, setLoad] = useState(false);
   const [orders, setOrders] = useState([]);
@@ -30,7 +30,7 @@ const Orders = () => {
       if (orderData.status === 200) {
         setOrders(orderData);
         setIsCount(true);
-      } 
+      }
       setLoad(false);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -92,7 +92,7 @@ const Orders = () => {
                       </tr>
                     ))
                   ) : (
-                        <tr className="text-center">
+                    <tr className="text-center">
                       <td colSpan="5" >No orders found</td>
                     </tr>
                   )}

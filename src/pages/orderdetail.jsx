@@ -4,7 +4,7 @@ import Loader from "../components/loader";
 
 const Orderdetail = () => {
     const { orderId } = useParams();
-    document.title = "Virhan Chains - Orderdetail";
+    document.title = "Virhan Jewels - Orderdetail";
     const [isLoaded, setLoad] = useState(true);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [cart, setCart] = useState([]);
@@ -51,13 +51,13 @@ const Orderdetail = () => {
         };
 
         fetchData();
-    }, []);
+    }, [orderId]);
 
     useEffect(() => {
         window.scrollTo(0, 0)
-    }, []);
+    }, [orderId]);
 
-    document.title = "Virhan Chains - Orderdetail";
+    document.title = `Virhan Jewels - Orderdetail`;
 
     if (isLoaded) {
         return <Loader />;

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Loader from "../components/loader";
 const Index = () => {
-  document.title = "Virhan Chains - Home";
+  document.title = "Virhan Jewels - Home";
 
   const [isLoaded, setLoad] = useState(true);
   const [ran, setrandomData] = useState([]);
@@ -76,7 +76,7 @@ const Index = () => {
                   {/* Our fashion jewellery is inspired by minimalism, focused on
                   minimal simplicity, perfect for everyday wear and cherished
                   for years. */}
-                  We invite you to explore our collections and experience the exceptional quality and service 
+                  We invite you to explore our collections and experience the exceptional quality and service
                 </p>
               </div>
             </div>
@@ -507,7 +507,7 @@ const Index = () => {
                       />
                     </Link>
                     <div className="product-overlay position-absolute">
-                      <div className="product-btns d-flex align-items-center justify-content-between">
+                      {/* <div className="product-btns d-flex align-items-center justify-content-center">
                         <a href="#!">
                           <i className="fa-regular fa-heart" />
                         </a>
@@ -517,13 +517,13 @@ const Index = () => {
                         <Link to={`/product/${l.design_no}`} >
                           <i className="fa-regular fa-eye" />
                         </Link>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                   <div className="mt-4 text-center">
-                    <a href="#!" className="secondary-text-color text-uppercase">
+                    <Link to={`/product/${l.design_no}`} className="secondary-text-color text-uppercase">
                       {l.design_no}
-                    </a><br></br>
+                    </Link><br></br>
                     {/* <a href="#!">
                       <h5 className="my-2 fw-medium product-title">
                         Hitmor 24k Neaklaces
@@ -539,11 +539,11 @@ const Index = () => {
             ))}
 
           </div>
-          <div className="text-center mt-60">
+          {/* <div className="text-center mt-60">
             <a href="#!" className="template-btn primary-btn">
               <span>View All</span>
             </a>
-          </div>
+          </div> */}
         </div>
       </section >
       {/*latest arrival end*/}

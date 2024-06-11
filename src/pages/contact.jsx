@@ -4,7 +4,7 @@ import Loader from '../components/loader';
 
 const Contact = () => {
 
-    document.title = "Virhan Chains - Contact";
+    document.title = "Virhan Jewels - Contact";
     const [isLoaded, setLoad] = useState(true);
     useEffect(() => {
         // Simulate an API call

@@ -5,7 +5,7 @@ import swal from "sweetalert";
 
 const Checkout = () => {
 
-    document.title = "Virhan Chains - Checkout";
+    document.title = "Virhan Jewels - Checkout";
 
     const [isLoaded, setLoad] = useState(true);
     const [cart, setCart] = useState([]);

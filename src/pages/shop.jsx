@@ -4,7 +4,7 @@ import Gridproducts from "../components/gridproducts";
 
 const Shop = () => {
 
-  document.title = "Virhan Chains - Shop";
+  document.title = "Virhan Jewels - Shop";
   const { cat, subcat, page, wgt, type, collection, manu } = useParams();
   return (
     <>

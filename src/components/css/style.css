@@ -4,8 +4,8 @@
 @import "https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&amp;display=swap";
 
 :root {
-  --body-font: "Prompt", sans-serif;
-  --heading-font: "Italiana", serif;
+  --body-font: Inter,sans-serif;
+  --heading-font: Inter,sans-serif;
   --primary-color: #3d3d3d;
   --primary-color-red: #8f0807;
   --secondary-color: #f36a07;

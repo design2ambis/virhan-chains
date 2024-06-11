@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Loader from '../components/loader';
 
 const About = () => {
-  document.title = "Virhan Chains - About";
+  document.title = "Virhan Jewels - About";
   const [isLoaded, setLoad] = useState(true);
   useEffect(() => {
     // Simulate an API call
@@ -153,7 +153,7 @@ const About = () => {
               <div>
                 <h3 className="mb-32">Our Goals</h3>
                 <p className="fw-light mb-40">
-                  At Virhan Chains, our goals are rooted in our commitment to excellence, sustainability, and customer satisfaction.
+                  At Virhan Jewels, our goals are rooted in our commitment to excellence, sustainability, and customer satisfaction.
                   We believe that each piece of jewelry is more than just an accessory;
                   it is a symbol of elegance, craftsmanship, and a cherished memory. Here’s what drives us:
                 </p>
@@ -455,7 +455,7 @@ const About = () => {
                 </span>
                 <h6 className="text-white mt-4 mb-3">1 Years Warranty</h6>
                 <p className="mb-30 fw-light">
-                  At Virhan Chains, we stand behind the quality of our pieces with a comprehensive 1-year warranty.
+                  At Virhan Jewels, we stand behind the quality of our pieces with a comprehensive 1-year warranty.
                 </p>
                 {/* <a href="#" className="explore-btn">
                   Learn More{" "}
@@ -623,7 +623,7 @@ const About = () => {
         </div>
       </section> */}
       {/*feedback section end*/}
-      
+
       {/*blog section start*/}
       <section className="ur2-blog-section ptb-120 bg-white">
         <div className="container">

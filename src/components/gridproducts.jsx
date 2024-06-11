@@ -17,7 +17,7 @@ const Gridproducts = (props) => {
   const [collection, setCollection] = useState([]);
   const [manu, setManu] = useState([]);
 
-  document.title = `Virhan Chains - ${props.cat
+  document.title = `Virhan Jewels - ${props.cat
     .split(" ")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ")} | ${props.subcat
